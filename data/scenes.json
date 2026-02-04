@@ -3,57 +3,2659 @@
   "nodes": {
     "intro": {
       "id": "intro",
-      "background": "linear-gradient(135deg, #f7d6ff, #dbeafe)",
-      "characters": [
-        { "name": "Mahiru", "pose": "default", "emotion": "lembut" }
-      ],
-      "dialogue": {
-        "speaker": "Mahiru",
-        "text": "Kamu akhirnya bangun. Aku menunggu di sini sejak tadi."
-      },
-      "choices": [
-        { "text": "Aku baik-baik saja.", "next": "tenang", "effects": { "affection": 1 } },
-        { "text": "Aku masih bingung.", "next": "bingung", "effects": { "trust": -1 } }
-      ]
-    },
-    "tenang": {
-      "id": "tenang",
-      "background": "linear-gradient(135deg, #fce7f3, #ede9fe)",
-      "characters": [
-        { "name": "Mahiru", "pose": "default", "emotion": "lega" }
-      ],
-      "dialogue": {
-        "speaker": "Mahiru",
-        "text": "Syukurlah. Suaramu membuat ruangan ini terasa lebih hangat."
-      },
-      "choices": [
-        { "text": "Lanjutkan", "next": "akhir" }
-      ]
-    },
-    "bingung": {
-      "id": "bingung",
-      "background": "linear-gradient(135deg, #e0f2fe, #fef9c3)",
-      "characters": [
-        { "name": "Mahiru", "pose": "default", "emotion": "waspada" }
-      ],
-      "dialogue": {
-        "speaker": "Mahiru",
-        "text": "Tidak apa-apa. Kita bisa mulai dari napas yang pelan dulu."
-      },
-      "choices": [
-        { "text": "Lanjutkan", "next": "akhir" }
-      ]
-    },
-    "akhir": {
-      "id": "akhir",
-      "background": "linear-gradient(135deg, #fdf2f8, #e2e8f0)",
-      "characters": [
-        { "name": "Mahiru", "pose": "default", "emotion": "hati-hati" }
-      ],
       "dialogue": {
         "speaker": "Mahiru",
         "text": "Ini baru awal. Pilihanmu akan menentukan bagaimana kita bertahan."
       },
+      "background": "assets/bg/room.jpg",
+      "character": "assets/char/mahiru.png",
+      "characters": [
+        {
+          "name": "Mahiru",
+          "pose": "default",
+          "emotion": "lembut"
+        }
+      ],
+      "choices": [
+        {
+          "text": "Lanjut",
+          "next": "scene001"
+        }
+      ]
+    },
+    "scene001": {
+      "id": "scene001",
+      "dialogue": {
+        "speaker": "Kamu",
+        "text": "Aku mendekat sedikit, cukup untuk membuatmu sadar akan ketertarikan kita."
+      },
+      "background": "assets/bg/room.jpg",
+      "character": "assets/char/mahiru.png",
+      "characters": [
+        {
+          "name": "Mahiru",
+          "pose": "default",
+          "emotion": "tersenyum"
+        }
+      ],
+      "choices": [
+        {
+          "text": "Lanjut",
+          "next": "scene002"
+        }
+      ]
+    },
+    "scene002": {
+      "id": "scene002",
+      "dialogue": {
+        "speaker": "Mahiru",
+        "text": "Kamu menatap balik, dan aku merasakan ketertarikan yang halus di udara."
+      },
+      "background": "assets/bg/room.jpg",
+      "character": "assets/char/mahiru.png",
+      "characters": [
+        {
+          "name": "Mahiru",
+          "pose": "default",
+          "emotion": "serius"
+        }
+      ],
+      "choices": [
+        {
+          "text": "Lanjut",
+          "next": "scene003"
+        }
+      ]
+    },
+    "scene003": {
+      "id": "scene003",
+      "dialogue": {
+        "speaker": "Kamu",
+        "text": "Di balik senyumku, ada rahasia kecil yang belum kubuka."
+      },
+      "background": "assets/bg/room.jpg",
+      "character": "assets/char/mahiru.png",
+      "characters": [
+        {
+          "name": "Mahiru",
+          "pose": "default",
+          "emotion": "cemas"
+        }
+      ],
+      "choices": [
+        {
+          "text": "Lanjut",
+          "next": "scene004"
+        }
+      ]
+    },
+    "scene004": {
+      "id": "scene004",
+      "dialogue": {
+        "speaker": "Mahiru",
+        "text": "Aku memberi isyarat halus, sebuah ekspresi khusus yang hanya kamu pahami."
+      },
+      "background": "assets/bg/room.jpg",
+      "character": "assets/char/mahiru.png",
+      "characters": [
+        {
+          "name": "Mahiru",
+          "pose": "default",
+          "emotion": "penasaran"
+        }
+      ],
+      "choices": [
+        {
+          "text": "Lanjut",
+          "next": "scene005"
+        }
+      ]
+    },
+    "scene005": {
+      "id": "scene005",
+      "dialogue": {
+        "speaker": "Kamu",
+        "text": "Kalimatku pelan, namun ada daya tarik yang membuatmu mendekat."
+      },
+      "background": "assets/bg/room.jpg",
+      "character": "assets/char/mahiru.png",
+      "characters": [
+        {
+          "name": "Mahiru",
+          "pose": "default",
+          "emotion": "hangat"
+        }
+      ],
+      "choices": [
+        {
+          "text": "Lanjut",
+          "next": "scene006"
+        }
+      ]
+    },
+    "scene006": {
+      "id": "scene006",
+      "dialogue": {
+        "speaker": "Mahiru",
+        "text": "Aku menggenggam pikiranku sendiri: semua ini lebih rumit dari yang terlihat."
+      },
+      "background": "assets/bg/room.jpg",
+      "character": "assets/char/mahiru.png",
+      "characters": [
+        {
+          "name": "Mahiru",
+          "pose": "default",
+          "emotion": "misterius"
+        }
+      ],
+      "choices": [
+        {
+          "text": "Lanjut",
+          "next": "scene007"
+        }
+      ]
+    },
+    "scene007": {
+      "id": "scene007",
+      "dialogue": {
+        "speaker": "Kamu",
+        "text": "Kita berjalan seirama, dan aku menjaga rahasia itu tetap aman."
+      },
+      "background": "assets/bg/room.jpg",
+      "character": "assets/char/mahiru.png",
+      "characters": [
+        {
+          "name": "Mahiru",
+          "pose": "default",
+          "emotion": "bercanda"
+        }
+      ],
+      "choices": [
+        {
+          "text": "Lanjut",
+          "next": "scene008"
+        }
+      ]
+    },
+    "scene008": {
+      "id": "scene008",
+      "dialogue": {
+        "speaker": "Mahiru",
+        "text": "Tatapanku mengandung ajakan, bukan janji, tapi cukup membuatmu ingin tahu."
+      },
+      "background": "assets/bg/room.jpg",
+      "character": "assets/char/mahiru.png",
+      "characters": [
+        {
+          "name": "Mahiru",
+          "pose": "default",
+          "emotion": "tegas"
+        }
+      ],
+      "choices": [
+        {
+          "text": "Lanjut",
+          "next": "scene009"
+        }
+      ]
+    },
+    "scene009": {
+      "id": "scene009",
+      "dialogue": {
+        "speaker": "Kamu",
+        "text": "Aku tertawa ringan, ekspresi khusus itu muncul sebentar sebelum hilang."
+      },
+      "background": "assets/bg/room.jpg",
+      "character": "assets/char/mahiru.png",
+      "characters": [
+        {
+          "name": "Mahiru",
+          "pose": "default",
+          "emotion": "gugup"
+        }
+      ],
+      "choices": [
+        {
+          "text": "Lanjut",
+          "next": "scene010"
+        }
+      ]
+    },
+    "scene010": {
+      "id": "scene010",
+      "dialogue": {
+        "speaker": "Mahiru",
+        "text": "Ada getar di suaraku, semacam kerinduan yang belum sempat kuucapkan."
+      },
+      "background": "assets/bg/room.jpg",
+      "character": "assets/char/mahiru.png",
+      "characters": [
+        {
+          "name": "Mahiru",
+          "pose": "default",
+          "emotion": "tenang"
+        }
+      ],
+      "choices": [
+        {
+          "text": "Lanjut",
+          "next": "scene011"
+        }
+      ]
+    },
+    "scene011": {
+      "id": "scene011",
+      "dialogue": {
+        "speaker": "Kamu",
+        "text": "Aku melihatmu dengan ekspresi tenang, seolah ada cerita yang belum kamu dengar."
+      },
+      "background": "assets/bg/room.jpg",
+      "character": "assets/char/mahiru.png",
+      "characters": [
+        {
+          "name": "Mahiru",
+          "pose": "default",
+          "emotion": "menggoda"
+        }
+      ],
+      "choices": [
+        {
+          "text": "Lanjut",
+          "next": "scene012"
+        }
+      ]
+    },
+    "scene012": {
+      "id": "scene012",
+      "dialogue": {
+        "speaker": "Mahiru",
+        "text": "Kamu menatap balik, dan aku merasakan ketertarikan yang halus di udara."
+      },
+      "background": "assets/bg/room.jpg",
+      "character": "assets/char/mahiru.png",
+      "characters": [
+        {
+          "name": "Mahiru",
+          "pose": "default",
+          "emotion": "terkejut"
+        }
+      ],
+      "choices": [
+        {
+          "text": "Lanjut",
+          "next": "scene013"
+        }
+      ]
+    },
+    "scene013": {
+      "id": "scene013",
+      "dialogue": {
+        "speaker": "Kamu",
+        "text": "Di balik senyumku, ada rahasia kecil yang belum kubuka."
+      },
+      "background": "assets/bg/room.jpg",
+      "character": "assets/char/mahiru.png",
+      "characters": [
+        {
+          "name": "Mahiru",
+          "pose": "default",
+          "emotion": "percaya diri"
+        }
+      ],
+      "choices": [
+        {
+          "text": "Lanjut",
+          "next": "scene014"
+        }
+      ]
+    },
+    "scene014": {
+      "id": "scene014",
+      "dialogue": {
+        "speaker": "Mahiru",
+        "text": "Aku memberi isyarat halus, sebuah ekspresi khusus yang hanya kamu pahami."
+      },
+      "background": "assets/bg/room.jpg",
+      "character": "assets/char/mahiru.png",
+      "characters": [
+        {
+          "name": "Mahiru",
+          "pose": "default",
+          "emotion": "waspada"
+        }
+      ],
+      "choices": [
+        {
+          "text": "Lanjut",
+          "next": "scene015"
+        }
+      ]
+    },
+    "scene015": {
+      "id": "scene015",
+      "dialogue": {
+        "speaker": "Kamu",
+        "text": "Kalimatku pelan, namun ada daya tarik yang membuatmu mendekat."
+      },
+      "background": "assets/bg/room.jpg",
+      "character": "assets/char/mahiru.png",
+      "characters": [
+        {
+          "name": "Mahiru",
+          "pose": "default",
+          "emotion": "tersipu"
+        }
+      ],
+      "choices": [
+        {
+          "text": "Lanjut",
+          "next": "scene016"
+        }
+      ]
+    },
+    "scene016": {
+      "id": "scene016",
+      "dialogue": {
+        "speaker": "Mahiru",
+        "text": "Kamu mengenali ekspresi khususku, tanda bahwa kita harus bicara tanpa suara."
+      },
+      "background": "assets/bg/room.jpg",
+      "character": "assets/char/mahiru.png",
+      "characters": [
+        {
+          "name": "Mahiru",
+          "pose": "default",
+          "emotion": "berapi-api"
+        }
+      ],
+      "choices": [
+        {
+          "text": "Lanjut",
+          "next": "scene017"
+        }
+      ]
+    },
+    "scene017": {
+      "id": "scene017",
+      "dialogue": {
+        "speaker": "Kamu",
+        "text": "Kita berjalan seirama, dan aku menjaga rahasia itu tetap aman."
+      },
+      "background": "assets/bg/room.jpg",
+      "character": "assets/char/mahiru.png",
+      "characters": [
+        {
+          "name": "Mahiru",
+          "pose": "default",
+          "emotion": "melankolis"
+        }
+      ],
+      "choices": [
+        {
+          "text": "Lanjut",
+          "next": "scene018"
+        }
+      ]
+    },
+    "scene018": {
+      "id": "scene018",
+      "dialogue": {
+        "speaker": "Mahiru",
+        "text": "Tatapanku mengandung ajakan, bukan janji, tapi cukup membuatmu ingin tahu."
+      },
+      "background": "assets/bg/room.jpg",
+      "character": "assets/char/mahiru.png",
+      "characters": [
+        {
+          "name": "Mahiru",
+          "pose": "default",
+          "emotion": "berharap"
+        }
+      ],
+      "choices": [
+        {
+          "text": "Lanjut",
+          "next": "scene019"
+        }
+      ]
+    },
+    "scene019": {
+      "id": "scene019",
+      "dialogue": {
+        "speaker": "Kamu",
+        "text": "Suaraku menghangat, menyentuh sisi romantis yang tak ingin kamu akui."
+      },
+      "background": "assets/bg/room.jpg",
+      "character": "assets/char/mahiru.png",
+      "characters": [
+        {
+          "name": "Mahiru",
+          "pose": "default",
+          "emotion": "lega"
+        }
+      ],
+      "choices": [
+        {
+          "text": "Lanjut",
+          "next": "scene020"
+        }
+      ]
+    },
+    "scene020": {
+      "id": "scene020",
+      "dialogue": {
+        "speaker": "Mahiru",
+        "text": "Ada getar di suaraku, semacam kerinduan yang belum sempat kuucapkan."
+      },
+      "background": "assets/bg/room.jpg",
+      "character": "assets/char/mahiru.png",
+      "characters": [
+        {
+          "name": "Mahiru",
+          "pose": "default",
+          "emotion": "lembut"
+        }
+      ],
+      "choices": [
+        {
+          "text": "Lanjut",
+          "next": "scene021"
+        }
+      ]
+    },
+    "scene021": {
+      "id": "scene021",
+      "dialogue": {
+        "speaker": "Kamu",
+        "text": "Aku melihatmu dengan ekspresi lembut, seolah ada cerita yang belum kamu dengar."
+      },
+      "background": "assets/bg/room.jpg",
+      "character": "assets/char/mahiru.png",
+      "characters": [
+        {
+          "name": "Mahiru",
+          "pose": "default",
+          "emotion": "tersenyum"
+        }
+      ],
+      "choices": [
+        {
+          "text": "Lanjut",
+          "next": "scene022"
+        }
+      ]
+    },
+    "scene022": {
+      "id": "scene022",
+      "dialogue": {
+        "speaker": "Mahiru",
+        "text": "Kamu menatap balik, dan aku merasakan ketertarikan yang halus di udara."
+      },
+      "background": "assets/bg/room.jpg",
+      "character": "assets/char/mahiru.png",
+      "characters": [
+        {
+          "name": "Mahiru",
+          "pose": "default",
+          "emotion": "serius"
+        }
+      ],
+      "choices": [
+        {
+          "text": "Lanjut",
+          "next": "scene023"
+        }
+      ]
+    },
+    "scene023": {
+      "id": "scene023",
+      "dialogue": {
+        "speaker": "Kamu",
+        "text": "Aku menyimpan rahasia tentang siapa yang sebenarnya menjaga tempat ini."
+      },
+      "background": "assets/bg/room.jpg",
+      "character": "assets/char/mahiru.png",
+      "characters": [
+        {
+          "name": "Mahiru",
+          "pose": "default",
+          "emotion": "cemas"
+        }
+      ],
+      "choices": [
+        {
+          "text": "Lanjut",
+          "next": "scene024"
+        }
+      ]
+    },
+    "scene024": {
+      "id": "scene024",
+      "dialogue": {
+        "speaker": "Mahiru",
+        "text": "Aku memberi isyarat halus, sebuah ekspresi khusus yang hanya kamu pahami."
+      },
+      "background": "assets/bg/room.jpg",
+      "character": "assets/char/mahiru.png",
+      "characters": [
+        {
+          "name": "Mahiru",
+          "pose": "default",
+          "emotion": "penasaran"
+        }
+      ],
+      "choices": [
+        {
+          "text": "Lanjut",
+          "next": "scene025"
+        }
+      ]
+    },
+    "scene025": {
+      "id": "scene025",
+      "dialogue": {
+        "speaker": "Kamu",
+        "text": "Kalimatku pelan, namun ada daya tarik yang membuatmu mendekat."
+      },
+      "background": "assets/bg/room.jpg",
+      "character": "assets/char/mahiru.png",
+      "characters": [
+        {
+          "name": "Mahiru",
+          "pose": "default",
+          "emotion": "hangat"
+        }
+      ],
+      "choices": [
+        {
+          "text": "Lanjut",
+          "next": "scene026"
+        }
+      ]
+    },
+    "scene026": {
+      "id": "scene026",
+      "dialogue": {
+        "speaker": "Mahiru",
+        "text": "Aku menggenggam pikiranku sendiri: semua ini lebih rumit dari yang terlihat."
+      },
+      "background": "assets/bg/room.jpg",
+      "character": "assets/char/mahiru.png",
+      "characters": [
+        {
+          "name": "Mahiru",
+          "pose": "default",
+          "emotion": "misterius"
+        }
+      ],
+      "choices": [
+        {
+          "text": "Lanjut",
+          "next": "scene027"
+        }
+      ]
+    },
+    "scene027": {
+      "id": "scene027",
+      "dialogue": {
+        "speaker": "Kamu",
+        "text": "Kita berjalan seirama, dan aku menjaga rahasia itu tetap aman."
+      },
+      "background": "assets/bg/room.jpg",
+      "character": "assets/char/mahiru.png",
+      "characters": [
+        {
+          "name": "Mahiru",
+          "pose": "default",
+          "emotion": "bercanda"
+        }
+      ],
+      "choices": [
+        {
+          "text": "Lanjut",
+          "next": "scene028"
+        }
+      ]
+    },
+    "scene028": {
+      "id": "scene028",
+      "dialogue": {
+        "speaker": "Mahiru",
+        "text": "Tatapanku mengandung ajakan, bukan janji, tapi cukup membuatmu ingin tahu."
+      },
+      "background": "assets/bg/room.jpg",
+      "character": "assets/char/mahiru.png",
+      "characters": [
+        {
+          "name": "Mahiru",
+          "pose": "default",
+          "emotion": "tegas"
+        }
+      ],
+      "choices": [
+        {
+          "text": "Lanjut",
+          "next": "scene029"
+        }
+      ]
+    },
+    "scene029": {
+      "id": "scene029",
+      "dialogue": {
+        "speaker": "Kamu",
+        "text": "Aku tertawa ringan, ekspresi khusus itu muncul sebentar sebelum hilang."
+      },
+      "background": "assets/bg/room.jpg",
+      "character": "assets/char/mahiru.png",
+      "characters": [
+        {
+          "name": "Mahiru",
+          "pose": "default",
+          "emotion": "gugup"
+        }
+      ],
+      "choices": [
+        {
+          "text": "Lanjut",
+          "next": "scene030"
+        }
+      ]
+    },
+    "scene030": {
+      "id": "scene030",
+      "dialogue": {
+        "speaker": "Mahiru",
+        "text": "Ada getar di suaraku, semacam kerinduan yang belum sempat kuucapkan."
+      },
+      "background": "assets/bg/room.jpg",
+      "character": "assets/char/mahiru.png",
+      "characters": [
+        {
+          "name": "Mahiru",
+          "pose": "default",
+          "emotion": "tenang"
+        }
+      ],
+      "choices": [
+        {
+          "text": "Lanjut",
+          "next": "scene031"
+        }
+      ]
+    },
+    "scene031": {
+      "id": "scene031",
+      "dialogue": {
+        "speaker": "Kamu",
+        "text": "Ekspresi khusus itu kembali muncul saat aku menyebut nama yang dirahasiakan."
+      },
+      "background": "assets/bg/room.jpg",
+      "character": "assets/char/mahiru.png",
+      "characters": [
+        {
+          "name": "Mahiru",
+          "pose": "default",
+          "emotion": "menggoda"
+        }
+      ],
+      "choices": [
+        {
+          "text": "Lanjut",
+          "next": "scene032"
+        }
+      ]
+    },
+    "scene032": {
+      "id": "scene032",
+      "dialogue": {
+        "speaker": "Mahiru",
+        "text": "Kamu menatap balik, dan aku merasakan ketertarikan yang halus di udara."
+      },
+      "background": "assets/bg/room.jpg",
+      "character": "assets/char/mahiru.png",
+      "characters": [
+        {
+          "name": "Mahiru",
+          "pose": "default",
+          "emotion": "terkejut"
+        }
+      ],
+      "choices": [
+        {
+          "text": "Lanjut",
+          "next": "scene033"
+        }
+      ]
+    },
+    "scene033": {
+      "id": "scene033",
+      "dialogue": {
+        "speaker": "Kamu",
+        "text": "Di balik senyumku, ada rahasia kecil yang belum kubuka."
+      },
+      "background": "assets/bg/room.jpg",
+      "character": "assets/char/mahiru.png",
+      "characters": [
+        {
+          "name": "Mahiru",
+          "pose": "default",
+          "emotion": "percaya diri"
+        }
+      ],
+      "choices": [
+        {
+          "text": "Lanjut",
+          "next": "scene034"
+        }
+      ]
+    },
+    "scene034": {
+      "id": "scene034",
+      "dialogue": {
+        "speaker": "Mahiru",
+        "text": "Aku memberi isyarat halus, sebuah ekspresi khusus yang hanya kamu pahami."
+      },
+      "background": "assets/bg/room.jpg",
+      "character": "assets/char/mahiru.png",
+      "characters": [
+        {
+          "name": "Mahiru",
+          "pose": "default",
+          "emotion": "waspada"
+        }
+      ],
+      "choices": [
+        {
+          "text": "Lanjut",
+          "next": "scene035"
+        }
+      ]
+    },
+    "scene035": {
+      "id": "scene035",
+      "dialogue": {
+        "speaker": "Kamu",
+        "text": "Kalimatku pelan, namun ada daya tarik yang membuatmu mendekat."
+      },
+      "background": "assets/bg/room.jpg",
+      "character": "assets/char/mahiru.png",
+      "characters": [
+        {
+          "name": "Mahiru",
+          "pose": "default",
+          "emotion": "tersipu"
+        }
+      ],
+      "choices": [
+        {
+          "text": "Lanjut",
+          "next": "scene036"
+        }
+      ]
+    },
+    "scene036": {
+      "id": "scene036",
+      "dialogue": {
+        "speaker": "Mahiru",
+        "text": "Aku menggenggam pikiranku sendiri: semua ini lebih rumit dari yang terlihat."
+      },
+      "background": "assets/bg/room.jpg",
+      "character": "assets/char/mahiru.png",
+      "characters": [
+        {
+          "name": "Mahiru",
+          "pose": "default",
+          "emotion": "berapi-api"
+        }
+      ],
+      "choices": [
+        {
+          "text": "Lanjut",
+          "next": "scene037"
+        }
+      ]
+    },
+    "scene037": {
+      "id": "scene037",
+      "dialogue": {
+        "speaker": "Kamu",
+        "text": "Ada ketegangan manis di antara kita, seperti janji yang belum dibuat."
+      },
+      "background": "assets/bg/room.jpg",
+      "character": "assets/char/mahiru.png",
+      "characters": [
+        {
+          "name": "Mahiru",
+          "pose": "default",
+          "emotion": "melankolis"
+        }
+      ],
+      "choices": [
+        {
+          "text": "Lanjut",
+          "next": "scene038"
+        }
+      ]
+    },
+    "scene038": {
+      "id": "scene038",
+      "dialogue": {
+        "speaker": "Mahiru",
+        "text": "Tatapanku mengandung ajakan, bukan janji, tapi cukup membuatmu ingin tahu."
+      },
+      "background": "assets/bg/room.jpg",
+      "character": "assets/char/mahiru.png",
+      "characters": [
+        {
+          "name": "Mahiru",
+          "pose": "default",
+          "emotion": "berharap"
+        }
+      ],
+      "choices": [
+        {
+          "text": "Lanjut",
+          "next": "scene039"
+        }
+      ]
+    },
+    "scene039": {
+      "id": "scene039",
+      "dialogue": {
+        "speaker": "Kamu",
+        "text": "Aku tertawa ringan, ekspresi khusus itu muncul sebentar sebelum hilang."
+      },
+      "background": "assets/bg/room.jpg",
+      "character": "assets/char/mahiru.png",
+      "characters": [
+        {
+          "name": "Mahiru",
+          "pose": "default",
+          "emotion": "lega"
+        }
+      ],
+      "choices": [
+        {
+          "text": "Lanjut",
+          "next": "scene040"
+        }
+      ]
+    },
+    "scene040": {
+      "id": "scene040",
+      "dialogue": {
+        "speaker": "Mahiru",
+        "text": "Ada getar di suaraku, semacam kerinduan yang belum sempat kuucapkan."
+      },
+      "background": "assets/bg/room.jpg",
+      "character": "assets/char/mahiru.png",
+      "characters": [
+        {
+          "name": "Mahiru",
+          "pose": "default",
+          "emotion": "lembut"
+        }
+      ],
+      "choices": [
+        {
+          "text": "Lanjut",
+          "next": "scene041"
+        }
+      ]
+    },
+    "scene041": {
+      "id": "scene041",
+      "dialogue": {
+        "speaker": "Kamu",
+        "text": "Aku melihatmu dengan ekspresi lembut, seolah ada cerita yang belum kamu dengar."
+      },
+      "background": "assets/bg/room.jpg",
+      "character": "assets/char/mahiru.png",
+      "characters": [
+        {
+          "name": "Mahiru",
+          "pose": "default",
+          "emotion": "tersenyum"
+        }
+      ],
+      "choices": [
+        {
+          "text": "Lanjut",
+          "next": "scene042"
+        }
+      ]
+    },
+    "scene042": {
+      "id": "scene042",
+      "dialogue": {
+        "speaker": "Mahiru",
+        "text": "Kamu menatap balik, dan aku merasakan ketertarikan yang halus di udara."
+      },
+      "background": "assets/bg/room.jpg",
+      "character": "assets/char/mahiru.png",
+      "characters": [
+        {
+          "name": "Mahiru",
+          "pose": "default",
+          "emotion": "serius"
+        }
+      ],
+      "choices": [
+        {
+          "text": "Lanjut",
+          "next": "scene043"
+        }
+      ]
+    },
+    "scene043": {
+      "id": "scene043",
+      "dialogue": {
+        "speaker": "Kamu",
+        "text": "Di balik senyumku, ada rahasia kecil yang belum kubuka."
+      },
+      "background": "assets/bg/room.jpg",
+      "character": "assets/char/mahiru.png",
+      "characters": [
+        {
+          "name": "Mahiru",
+          "pose": "default",
+          "emotion": "cemas"
+        }
+      ],
+      "choices": [
+        {
+          "text": "Lanjut",
+          "next": "scene044"
+        }
+      ]
+    },
+    "scene044": {
+      "id": "scene044",
+      "dialogue": {
+        "speaker": "Mahiru",
+        "text": "Aku memberi isyarat halus, sebuah ekspresi khusus yang hanya kamu pahami."
+      },
+      "background": "assets/bg/room.jpg",
+      "character": "assets/char/mahiru.png",
+      "characters": [
+        {
+          "name": "Mahiru",
+          "pose": "default",
+          "emotion": "penasaran"
+        }
+      ],
+      "choices": [
+        {
+          "text": "Lanjut",
+          "next": "scene045"
+        }
+      ]
+    },
+    "scene045": {
+      "id": "scene045",
+      "dialogue": {
+        "speaker": "Kamu",
+        "text": "Ada rahasia di balik gelangku, petunjuk yang tidak berani kutunjukkan."
+      },
+      "background": "assets/bg/room.jpg",
+      "character": "assets/char/mahiru.png",
+      "characters": [
+        {
+          "name": "Mahiru",
+          "pose": "default",
+          "emotion": "hangat"
+        }
+      ],
+      "choices": [
+        {
+          "text": "Lanjut",
+          "next": "scene046"
+        }
+      ]
+    },
+    "scene046": {
+      "id": "scene046",
+      "dialogue": {
+        "speaker": "Mahiru",
+        "text": "Aku menunjukkan ekspresi khusus: senyum tipis yang selalu berarti 'jangan percaya siapa pun'."
+      },
+      "background": "assets/bg/room.jpg",
+      "character": "assets/char/mahiru.png",
+      "characters": [
+        {
+          "name": "Mahiru",
+          "pose": "default",
+          "emotion": "misterius"
+        }
+      ],
+      "choices": [
+        {
+          "text": "Lanjut",
+          "next": "scene047"
+        }
+      ]
+    },
+    "scene047": {
+      "id": "scene047",
+      "dialogue": {
+        "speaker": "Kamu",
+        "text": "Kita berjalan seirama, dan aku menjaga rahasia itu tetap aman."
+      },
+      "background": "assets/bg/room.jpg",
+      "character": "assets/char/mahiru.png",
+      "characters": [
+        {
+          "name": "Mahiru",
+          "pose": "default",
+          "emotion": "bercanda"
+        }
+      ],
+      "choices": [
+        {
+          "text": "Lanjut",
+          "next": "scene048"
+        }
+      ]
+    },
+    "scene048": {
+      "id": "scene048",
+      "dialogue": {
+        "speaker": "Mahiru",
+        "text": "Tatapanku mengandung ajakan, bukan janji, tapi cukup membuatmu ingin tahu."
+      },
+      "background": "assets/bg/room.jpg",
+      "character": "assets/char/mahiru.png",
+      "characters": [
+        {
+          "name": "Mahiru",
+          "pose": "default",
+          "emotion": "tegas"
+        }
+      ],
+      "choices": [
+        {
+          "text": "Lanjut",
+          "next": "scene049"
+        }
+      ]
+    },
+    "scene049": {
+      "id": "scene049",
+      "dialogue": {
+        "speaker": "Kamu",
+        "text": "Aku tertawa ringan, ekspresi khusus itu muncul sebentar sebelum hilang."
+      },
+      "background": "assets/bg/room.jpg",
+      "character": "assets/char/mahiru.png",
+      "characters": [
+        {
+          "name": "Mahiru",
+          "pose": "default",
+          "emotion": "gugup"
+        }
+      ],
+      "choices": [
+        {
+          "text": "Lanjut",
+          "next": "scene050"
+        }
+      ]
+    },
+    "scene050": {
+      "id": "scene050",
+      "dialogue": {
+        "speaker": "Mahiru",
+        "text": "Ada getar di suaraku, semacam kerinduan yang belum sempat kuucapkan."
+      },
+      "background": "assets/bg/room.jpg",
+      "character": "assets/char/mahiru.png",
+      "characters": [
+        {
+          "name": "Mahiru",
+          "pose": "default",
+          "emotion": "tenang"
+        }
+      ],
+      "choices": [
+        {
+          "text": "Lanjut",
+          "next": "scene051"
+        }
+      ]
+    },
+    "scene051": {
+      "id": "scene051",
+      "dialogue": {
+        "speaker": "Kamu",
+        "text": "Aku melihatmu dengan ekspresi tenang, seolah ada cerita yang belum kamu dengar."
+      },
+      "background": "assets/bg/room.jpg",
+      "character": "assets/char/mahiru.png",
+      "characters": [
+        {
+          "name": "Mahiru",
+          "pose": "default",
+          "emotion": "menggoda"
+        }
+      ],
+      "choices": [
+        {
+          "text": "Lanjut",
+          "next": "scene052"
+        }
+      ]
+    },
+    "scene052": {
+      "id": "scene052",
+      "dialogue": {
+        "speaker": "Mahiru",
+        "text": "Kamu menatap balik, dan aku merasakan ketertarikan yang halus di udara."
+      },
+      "background": "assets/bg/room.jpg",
+      "character": "assets/char/mahiru.png",
+      "characters": [
+        {
+          "name": "Mahiru",
+          "pose": "default",
+          "emotion": "terkejut"
+        }
+      ],
+      "choices": [
+        {
+          "text": "Lanjut",
+          "next": "scene053"
+        }
+      ]
+    },
+    "scene053": {
+      "id": "scene053",
+      "dialogue": {
+        "speaker": "Kamu",
+        "text": "Di balik senyumku, ada rahasia kecil yang belum kubuka."
+      },
+      "background": "assets/bg/room.jpg",
+      "character": "assets/char/mahiru.png",
+      "characters": [
+        {
+          "name": "Mahiru",
+          "pose": "default",
+          "emotion": "percaya diri"
+        }
+      ],
+      "choices": [
+        {
+          "text": "Lanjut",
+          "next": "scene054"
+        }
+      ]
+    },
+    "scene054": {
+      "id": "scene054",
+      "dialogue": {
+        "speaker": "Mahiru",
+        "text": "Aku memberi isyarat halus, sebuah ekspresi khusus yang hanya kamu pahami."
+      },
+      "background": "assets/bg/room.jpg",
+      "character": "assets/char/mahiru.png",
+      "characters": [
+        {
+          "name": "Mahiru",
+          "pose": "default",
+          "emotion": "waspada"
+        }
+      ],
+      "choices": [
+        {
+          "text": "Lanjut",
+          "next": "scene055"
+        }
+      ]
+    },
+    "scene055": {
+      "id": "scene055",
+      "dialogue": {
+        "speaker": "Kamu",
+        "text": "Aku mendekat sedikit, cukup untuk membuatmu sadar akan ketertarikan kita."
+      },
+      "background": "assets/bg/room.jpg",
+      "character": "assets/char/mahiru.png",
+      "characters": [
+        {
+          "name": "Mahiru",
+          "pose": "default",
+          "emotion": "tersipu"
+        }
+      ],
+      "choices": [
+        {
+          "text": "Lanjut",
+          "next": "scene056"
+        }
+      ]
+    },
+    "scene056": {
+      "id": "scene056",
+      "dialogue": {
+        "speaker": "Mahiru",
+        "text": "Aku menggenggam pikiranku sendiri: semua ini lebih rumit dari yang terlihat."
+      },
+      "background": "assets/bg/room.jpg",
+      "character": "assets/char/mahiru.png",
+      "characters": [
+        {
+          "name": "Mahiru",
+          "pose": "default",
+          "emotion": "berapi-api"
+        }
+      ],
+      "choices": [
+        {
+          "text": "Lanjut",
+          "next": "scene057"
+        }
+      ]
+    },
+    "scene057": {
+      "id": "scene057",
+      "dialogue": {
+        "speaker": "Kamu",
+        "text": "Kita berjalan seirama, dan aku menjaga rahasia itu tetap aman."
+      },
+      "background": "assets/bg/room.jpg",
+      "character": "assets/char/mahiru.png",
+      "characters": [
+        {
+          "name": "Mahiru",
+          "pose": "default",
+          "emotion": "melankolis"
+        }
+      ],
+      "choices": [
+        {
+          "text": "Lanjut",
+          "next": "scene058"
+        }
+      ]
+    },
+    "scene058": {
+      "id": "scene058",
+      "dialogue": {
+        "speaker": "Mahiru",
+        "text": "Tatapanku mengandung ajakan, bukan janji, tapi cukup membuatmu ingin tahu."
+      },
+      "background": "assets/bg/room.jpg",
+      "character": "assets/char/mahiru.png",
+      "characters": [
+        {
+          "name": "Mahiru",
+          "pose": "default",
+          "emotion": "berharap"
+        }
+      ],
+      "choices": [
+        {
+          "text": "Lanjut",
+          "next": "scene059"
+        }
+      ]
+    },
+    "scene059": {
+      "id": "scene059",
+      "dialogue": {
+        "speaker": "Kamu",
+        "text": "Aku tertawa ringan, ekspresi khusus itu muncul sebentar sebelum hilang."
+      },
+      "background": "assets/bg/room.jpg",
+      "character": "assets/char/mahiru.png",
+      "characters": [
+        {
+          "name": "Mahiru",
+          "pose": "default",
+          "emotion": "lega"
+        }
+      ],
+      "choices": [
+        {
+          "text": "Lanjut",
+          "next": "scene060"
+        }
+      ]
+    },
+    "scene060": {
+      "id": "scene060",
+      "dialogue": {
+        "speaker": "Mahiru",
+        "text": "Ada getar di suaraku, semacam kerinduan yang belum sempat kuucapkan."
+      },
+      "background": "assets/bg/room.jpg",
+      "character": "assets/char/mahiru.png",
+      "characters": [
+        {
+          "name": "Mahiru",
+          "pose": "default",
+          "emotion": "lembut"
+        }
+      ],
+      "choices": [
+        {
+          "text": "Lanjut",
+          "next": "scene061"
+        }
+      ]
+    },
+    "scene061": {
+      "id": "scene061",
+      "dialogue": {
+        "speaker": "Kamu",
+        "text": "Kamu mengenali ekspresi khususku, tanda bahwa kita harus bicara tanpa suara."
+      },
+      "background": "assets/bg/room.jpg",
+      "character": "assets/char/mahiru.png",
+      "characters": [
+        {
+          "name": "Mahiru",
+          "pose": "default",
+          "emotion": "tersenyum"
+        }
+      ],
+      "choices": [
+        {
+          "text": "Lanjut",
+          "next": "scene062"
+        }
+      ]
+    },
+    "scene062": {
+      "id": "scene062",
+      "dialogue": {
+        "speaker": "Mahiru",
+        "text": "Kamu menatap balik, dan aku merasakan ketertarikan yang halus di udara."
+      },
+      "background": "assets/bg/room.jpg",
+      "character": "assets/char/mahiru.png",
+      "characters": [
+        {
+          "name": "Mahiru",
+          "pose": "default",
+          "emotion": "serius"
+        }
+      ],
+      "choices": [
+        {
+          "text": "Lanjut",
+          "next": "scene063"
+        }
+      ]
+    },
+    "scene063": {
+      "id": "scene063",
+      "dialogue": {
+        "speaker": "Kamu",
+        "text": "Di balik senyumku, ada rahasia kecil yang belum kubuka."
+      },
+      "background": "assets/bg/room.jpg",
+      "character": "assets/char/mahiru.png",
+      "characters": [
+        {
+          "name": "Mahiru",
+          "pose": "default",
+          "emotion": "cemas"
+        }
+      ],
+      "choices": [
+        {
+          "text": "Lanjut",
+          "next": "scene064"
+        }
+      ]
+    },
+    "scene064": {
+      "id": "scene064",
+      "dialogue": {
+        "speaker": "Mahiru",
+        "text": "Aku memberi isyarat halus, sebuah ekspresi khusus yang hanya kamu pahami."
+      },
+      "background": "assets/bg/room.jpg",
+      "character": "assets/char/mahiru.png",
+      "characters": [
+        {
+          "name": "Mahiru",
+          "pose": "default",
+          "emotion": "penasaran"
+        }
+      ],
+      "choices": [
+        {
+          "text": "Lanjut",
+          "next": "scene065"
+        }
+      ]
+    },
+    "scene065": {
+      "id": "scene065",
+      "dialogue": {
+        "speaker": "Kamu",
+        "text": "Kalimatku pelan, namun ada daya tarik yang membuatmu mendekat."
+      },
+      "background": "assets/bg/room.jpg",
+      "character": "assets/char/mahiru.png",
+      "characters": [
+        {
+          "name": "Mahiru",
+          "pose": "default",
+          "emotion": "hangat"
+        }
+      ],
+      "choices": [
+        {
+          "text": "Lanjut",
+          "next": "scene066"
+        }
+      ]
+    },
+    "scene066": {
+      "id": "scene066",
+      "dialogue": {
+        "speaker": "Mahiru",
+        "text": "Aku menggenggam pikiranku sendiri: semua ini lebih rumit dari yang terlihat."
+      },
+      "background": "assets/bg/room.jpg",
+      "character": "assets/char/mahiru.png",
+      "characters": [
+        {
+          "name": "Mahiru",
+          "pose": "default",
+          "emotion": "misterius"
+        }
+      ],
+      "choices": [
+        {
+          "text": "Lanjut",
+          "next": "scene067"
+        }
+      ]
+    },
+    "scene067": {
+      "id": "scene067",
+      "dialogue": {
+        "speaker": "Kamu",
+        "text": "Rahasia itu terikat pada ruangan ini, pada pintu yang belum pernah kamu buka."
+      },
+      "background": "assets/bg/room.jpg",
+      "character": "assets/char/mahiru.png",
+      "characters": [
+        {
+          "name": "Mahiru",
+          "pose": "default",
+          "emotion": "bercanda"
+        }
+      ],
+      "choices": [
+        {
+          "text": "Lanjut",
+          "next": "scene068"
+        }
+      ]
+    },
+    "scene068": {
+      "id": "scene068",
+      "dialogue": {
+        "speaker": "Mahiru",
+        "text": "Tatapanku mengandung ajakan, bukan janji, tapi cukup membuatmu ingin tahu."
+      },
+      "background": "assets/bg/room.jpg",
+      "character": "assets/char/mahiru.png",
+      "characters": [
+        {
+          "name": "Mahiru",
+          "pose": "default",
+          "emotion": "tegas"
+        }
+      ],
+      "choices": [
+        {
+          "text": "Lanjut",
+          "next": "scene069"
+        }
+      ]
+    },
+    "scene069": {
+      "id": "scene069",
+      "dialogue": {
+        "speaker": "Kamu",
+        "text": "Aku tertawa ringan, ekspresi khusus itu muncul sebentar sebelum hilang."
+      },
+      "background": "assets/bg/room.jpg",
+      "character": "assets/char/mahiru.png",
+      "characters": [
+        {
+          "name": "Mahiru",
+          "pose": "default",
+          "emotion": "gugup"
+        }
+      ],
+      "choices": [
+        {
+          "text": "Lanjut",
+          "next": "scene070"
+        }
+      ]
+    },
+    "scene070": {
+      "id": "scene070",
+      "dialogue": {
+        "speaker": "Mahiru",
+        "text": "Ada getar di suaraku, semacam kerinduan yang belum sempat kuucapkan."
+      },
+      "background": "assets/bg/room.jpg",
+      "character": "assets/char/mahiru.png",
+      "characters": [
+        {
+          "name": "Mahiru",
+          "pose": "default",
+          "emotion": "tenang"
+        }
+      ],
+      "choices": [
+        {
+          "text": "Lanjut",
+          "next": "scene071"
+        }
+      ]
+    },
+    "scene071": {
+      "id": "scene071",
+      "dialogue": {
+        "speaker": "Kamu",
+        "text": "Aku melihatmu dengan ekspresi tenang, seolah ada cerita yang belum kamu dengar."
+      },
+      "background": "assets/bg/room.jpg",
+      "character": "assets/char/mahiru.png",
+      "characters": [
+        {
+          "name": "Mahiru",
+          "pose": "default",
+          "emotion": "menggoda"
+        }
+      ],
+      "choices": [
+        {
+          "text": "Lanjut",
+          "next": "scene072"
+        }
+      ]
+    },
+    "scene072": {
+      "id": "scene072",
+      "dialogue": {
+        "speaker": "Mahiru",
+        "text": "Kamu menatap balik, dan aku merasakan ketertarikan yang halus di udara."
+      },
+      "background": "assets/bg/room.jpg",
+      "character": "assets/char/mahiru.png",
+      "characters": [
+        {
+          "name": "Mahiru",
+          "pose": "default",
+          "emotion": "terkejut"
+        }
+      ],
+      "choices": [
+        {
+          "text": "Lanjut",
+          "next": "scene073"
+        }
+      ]
+    },
+    "scene073": {
+      "id": "scene073",
+      "dialogue": {
+        "speaker": "Kamu",
+        "text": "Suaraku menghangat, menyentuh sisi romantis yang tak ingin kamu akui."
+      },
+      "background": "assets/bg/room.jpg",
+      "character": "assets/char/mahiru.png",
+      "characters": [
+        {
+          "name": "Mahiru",
+          "pose": "default",
+          "emotion": "percaya diri"
+        }
+      ],
+      "choices": [
+        {
+          "text": "Lanjut",
+          "next": "scene074"
+        }
+      ]
+    },
+    "scene074": {
+      "id": "scene074",
+      "dialogue": {
+        "speaker": "Mahiru",
+        "text": "Aku memberi isyarat halus, sebuah ekspresi khusus yang hanya kamu pahami."
+      },
+      "background": "assets/bg/room.jpg",
+      "character": "assets/char/mahiru.png",
+      "characters": [
+        {
+          "name": "Mahiru",
+          "pose": "default",
+          "emotion": "waspada"
+        }
+      ],
+      "choices": [
+        {
+          "text": "Lanjut",
+          "next": "scene075"
+        }
+      ]
+    },
+    "scene075": {
+      "id": "scene075",
+      "dialogue": {
+        "speaker": "Kamu",
+        "text": "Kalimatku pelan, namun ada daya tarik yang membuatmu mendekat."
+      },
+      "background": "assets/bg/room.jpg",
+      "character": "assets/char/mahiru.png",
+      "characters": [
+        {
+          "name": "Mahiru",
+          "pose": "default",
+          "emotion": "tersipu"
+        }
+      ],
+      "choices": [
+        {
+          "text": "Lanjut",
+          "next": "scene076"
+        }
+      ]
+    },
+    "scene076": {
+      "id": "scene076",
+      "dialogue": {
+        "speaker": "Mahiru",
+        "text": "Ekspresi khusus itu kembali muncul saat aku menyebut nama yang dirahasiakan."
+      },
+      "background": "assets/bg/room.jpg",
+      "character": "assets/char/mahiru.png",
+      "characters": [
+        {
+          "name": "Mahiru",
+          "pose": "default",
+          "emotion": "berapi-api"
+        }
+      ],
+      "choices": [
+        {
+          "text": "Lanjut",
+          "next": "scene077"
+        }
+      ]
+    },
+    "scene077": {
+      "id": "scene077",
+      "dialogue": {
+        "speaker": "Kamu",
+        "text": "Kita berjalan seirama, dan aku menjaga rahasia itu tetap aman."
+      },
+      "background": "assets/bg/room.jpg",
+      "character": "assets/char/mahiru.png",
+      "characters": [
+        {
+          "name": "Mahiru",
+          "pose": "default",
+          "emotion": "melankolis"
+        }
+      ],
+      "choices": [
+        {
+          "text": "Lanjut",
+          "next": "scene078"
+        }
+      ]
+    },
+    "scene078": {
+      "id": "scene078",
+      "dialogue": {
+        "speaker": "Mahiru",
+        "text": "Tatapanku mengandung ajakan, bukan janji, tapi cukup membuatmu ingin tahu."
+      },
+      "background": "assets/bg/room.jpg",
+      "character": "assets/char/mahiru.png",
+      "characters": [
+        {
+          "name": "Mahiru",
+          "pose": "default",
+          "emotion": "berharap"
+        }
+      ],
+      "choices": [
+        {
+          "text": "Lanjut",
+          "next": "scene079"
+        }
+      ]
+    },
+    "scene079": {
+      "id": "scene079",
+      "dialogue": {
+        "speaker": "Kamu",
+        "text": "Aku tertawa ringan, ekspresi khusus itu muncul sebentar sebelum hilang."
+      },
+      "background": "assets/bg/room.jpg",
+      "character": "assets/char/mahiru.png",
+      "characters": [
+        {
+          "name": "Mahiru",
+          "pose": "default",
+          "emotion": "lega"
+        }
+      ],
+      "choices": [
+        {
+          "text": "Lanjut",
+          "next": "scene080"
+        }
+      ]
+    },
+    "scene080": {
+      "id": "scene080",
+      "dialogue": {
+        "speaker": "Mahiru",
+        "text": "Ada getar di suaraku, semacam kerinduan yang belum sempat kuucapkan."
+      },
+      "background": "assets/bg/room.jpg",
+      "character": "assets/char/mahiru.png",
+      "characters": [
+        {
+          "name": "Mahiru",
+          "pose": "default",
+          "emotion": "lembut"
+        }
+      ],
+      "choices": [
+        {
+          "text": "Lanjut",
+          "next": "scene081"
+        }
+      ]
+    },
+    "scene081": {
+      "id": "scene081",
+      "dialogue": {
+        "speaker": "Kamu",
+        "text": "Aku melihatmu dengan ekspresi lembut, seolah ada cerita yang belum kamu dengar."
+      },
+      "background": "assets/bg/room.jpg",
+      "character": "assets/char/mahiru.png",
+      "characters": [
+        {
+          "name": "Mahiru",
+          "pose": "default",
+          "emotion": "tersenyum"
+        }
+      ],
+      "choices": [
+        {
+          "text": "Lanjut",
+          "next": "scene082"
+        }
+      ]
+    },
+    "scene082": {
+      "id": "scene082",
+      "dialogue": {
+        "speaker": "Mahiru",
+        "text": "Kamu menatap balik, dan aku merasakan ketertarikan yang halus di udara."
+      },
+      "background": "assets/bg/room.jpg",
+      "character": "assets/char/mahiru.png",
+      "characters": [
+        {
+          "name": "Mahiru",
+          "pose": "default",
+          "emotion": "serius"
+        }
+      ],
+      "choices": [
+        {
+          "text": "Lanjut",
+          "next": "scene083"
+        }
+      ]
+    },
+    "scene083": {
+      "id": "scene083",
+      "dialogue": {
+        "speaker": "Kamu",
+        "text": "Di balik senyumku, ada rahasia kecil yang belum kubuka."
+      },
+      "background": "assets/bg/room.jpg",
+      "character": "assets/char/mahiru.png",
+      "characters": [
+        {
+          "name": "Mahiru",
+          "pose": "default",
+          "emotion": "cemas"
+        }
+      ],
+      "choices": [
+        {
+          "text": "Lanjut",
+          "next": "scene084"
+        }
+      ]
+    },
+    "scene084": {
+      "id": "scene084",
+      "dialogue": {
+        "speaker": "Mahiru",
+        "text": "Aku memberi isyarat halus, sebuah ekspresi khusus yang hanya kamu pahami."
+      },
+      "background": "assets/bg/room.jpg",
+      "character": "assets/char/mahiru.png",
+      "characters": [
+        {
+          "name": "Mahiru",
+          "pose": "default",
+          "emotion": "penasaran"
+        }
+      ],
+      "choices": [
+        {
+          "text": "Lanjut",
+          "next": "scene085"
+        }
+      ]
+    },
+    "scene085": {
+      "id": "scene085",
+      "dialogue": {
+        "speaker": "Kamu",
+        "text": "Kalimatku pelan, namun ada daya tarik yang membuatmu mendekat."
+      },
+      "background": "assets/bg/room.jpg",
+      "character": "assets/char/mahiru.png",
+      "characters": [
+        {
+          "name": "Mahiru",
+          "pose": "default",
+          "emotion": "hangat"
+        }
+      ],
+      "choices": [
+        {
+          "text": "Lanjut",
+          "next": "scene086"
+        }
+      ]
+    },
+    "scene086": {
+      "id": "scene086",
+      "dialogue": {
+        "speaker": "Mahiru",
+        "text": "Aku menggenggam pikiranku sendiri: semua ini lebih rumit dari yang terlihat."
+      },
+      "background": "assets/bg/room.jpg",
+      "character": "assets/char/mahiru.png",
+      "characters": [
+        {
+          "name": "Mahiru",
+          "pose": "default",
+          "emotion": "misterius"
+        }
+      ],
+      "choices": [
+        {
+          "text": "Lanjut",
+          "next": "scene087"
+        }
+      ]
+    },
+    "scene087": {
+      "id": "scene087",
+      "dialogue": {
+        "speaker": "Kamu",
+        "text": "Kita berjalan seirama, dan aku menjaga rahasia itu tetap aman."
+      },
+      "background": "assets/bg/room.jpg",
+      "character": "assets/char/mahiru.png",
+      "characters": [
+        {
+          "name": "Mahiru",
+          "pose": "default",
+          "emotion": "bercanda"
+        }
+      ],
+      "choices": [
+        {
+          "text": "Lanjut",
+          "next": "scene088"
+        }
+      ]
+    },
+    "scene088": {
+      "id": "scene088",
+      "dialogue": {
+        "speaker": "Mahiru",
+        "text": "Tatapanku mengandung ajakan, bukan janji, tapi cukup membuatmu ingin tahu."
+      },
+      "background": "assets/bg/room.jpg",
+      "character": "assets/char/mahiru.png",
+      "characters": [
+        {
+          "name": "Mahiru",
+          "pose": "default",
+          "emotion": "tegas"
+        }
+      ],
+      "choices": [
+        {
+          "text": "Lanjut",
+          "next": "scene089"
+        }
+      ]
+    },
+    "scene089": {
+      "id": "scene089",
+      "dialogue": {
+        "speaker": "Kamu",
+        "text": "Aku menyimpan rahasia tentang siapa yang sebenarnya menjaga tempat ini."
+      },
+      "background": "assets/bg/room.jpg",
+      "character": "assets/char/mahiru.png",
+      "characters": [
+        {
+          "name": "Mahiru",
+          "pose": "default",
+          "emotion": "gugup"
+        }
+      ],
+      "choices": [
+        {
+          "text": "Lanjut",
+          "next": "scene090"
+        }
+      ]
+    },
+    "scene090": {
+      "id": "scene090",
+      "dialogue": {
+        "speaker": "Mahiru",
+        "text": "Ada getar di suaraku, semacam kerinduan yang belum sempat kuucapkan."
+      },
+      "background": "assets/bg/room.jpg",
+      "character": "assets/char/mahiru.png",
+      "characters": [
+        {
+          "name": "Mahiru",
+          "pose": "default",
+          "emotion": "tenang"
+        }
+      ],
+      "choices": [
+        {
+          "text": "Lanjut",
+          "next": "scene091"
+        }
+      ]
+    },
+    "scene091": {
+      "id": "scene091",
+      "dialogue": {
+        "speaker": "Kamu",
+        "text": "Ada ketegangan manis di antara kita, seperti janji yang belum dibuat."
+      },
+      "background": "assets/bg/room.jpg",
+      "character": "assets/char/mahiru.png",
+      "characters": [
+        {
+          "name": "Mahiru",
+          "pose": "default",
+          "emotion": "menggoda"
+        }
+      ],
+      "choices": [
+        {
+          "text": "Lanjut",
+          "next": "scene092"
+        }
+      ]
+    },
+    "scene092": {
+      "id": "scene092",
+      "dialogue": {
+        "speaker": "Mahiru",
+        "text": "Kamu menatap balik, dan aku merasakan ketertarikan yang halus di udara."
+      },
+      "background": "assets/bg/room.jpg",
+      "character": "assets/char/mahiru.png",
+      "characters": [
+        {
+          "name": "Mahiru",
+          "pose": "default",
+          "emotion": "terkejut"
+        }
+      ],
+      "choices": [
+        {
+          "text": "Lanjut",
+          "next": "scene093"
+        }
+      ]
+    },
+    "scene093": {
+      "id": "scene093",
+      "dialogue": {
+        "speaker": "Kamu",
+        "text": "Di balik senyumku, ada rahasia kecil yang belum kubuka."
+      },
+      "background": "assets/bg/room.jpg",
+      "character": "assets/char/mahiru.png",
+      "characters": [
+        {
+          "name": "Mahiru",
+          "pose": "default",
+          "emotion": "percaya diri"
+        }
+      ],
+      "choices": [
+        {
+          "text": "Lanjut",
+          "next": "scene094"
+        }
+      ]
+    },
+    "scene094": {
+      "id": "scene094",
+      "dialogue": {
+        "speaker": "Mahiru",
+        "text": "Aku memberi isyarat halus, sebuah ekspresi khusus yang hanya kamu pahami."
+      },
+      "background": "assets/bg/room.jpg",
+      "character": "assets/char/mahiru.png",
+      "characters": [
+        {
+          "name": "Mahiru",
+          "pose": "default",
+          "emotion": "waspada"
+        }
+      ],
+      "choices": [
+        {
+          "text": "Lanjut",
+          "next": "scene095"
+        }
+      ]
+    },
+    "scene095": {
+      "id": "scene095",
+      "dialogue": {
+        "speaker": "Kamu",
+        "text": "Kalimatku pelan, namun ada daya tarik yang membuatmu mendekat."
+      },
+      "background": "assets/bg/room.jpg",
+      "character": "assets/char/mahiru.png",
+      "characters": [
+        {
+          "name": "Mahiru",
+          "pose": "default",
+          "emotion": "tersipu"
+        }
+      ],
+      "choices": [
+        {
+          "text": "Lanjut",
+          "next": "scene096"
+        }
+      ]
+    },
+    "scene096": {
+      "id": "scene096",
+      "dialogue": {
+        "speaker": "Mahiru",
+        "text": "Aku menggenggam pikiranku sendiri: semua ini lebih rumit dari yang terlihat."
+      },
+      "background": "assets/bg/room.jpg",
+      "character": "assets/char/mahiru.png",
+      "characters": [
+        {
+          "name": "Mahiru",
+          "pose": "default",
+          "emotion": "berapi-api"
+        }
+      ],
+      "choices": [
+        {
+          "text": "Lanjut",
+          "next": "scene097"
+        }
+      ]
+    },
+    "scene097": {
+      "id": "scene097",
+      "dialogue": {
+        "speaker": "Kamu",
+        "text": "Kita berjalan seirama, dan aku menjaga rahasia itu tetap aman."
+      },
+      "background": "assets/bg/room.jpg",
+      "character": "assets/char/mahiru.png",
+      "characters": [
+        {
+          "name": "Mahiru",
+          "pose": "default",
+          "emotion": "melankolis"
+        }
+      ],
+      "choices": [
+        {
+          "text": "Lanjut",
+          "next": "scene098"
+        }
+      ]
+    },
+    "scene098": {
+      "id": "scene098",
+      "dialogue": {
+        "speaker": "Mahiru",
+        "text": "Tatapanku mengandung ajakan, bukan janji, tapi cukup membuatmu ingin tahu."
+      },
+      "background": "assets/bg/room.jpg",
+      "character": "assets/char/mahiru.png",
+      "characters": [
+        {
+          "name": "Mahiru",
+          "pose": "default",
+          "emotion": "berharap"
+        }
+      ],
+      "choices": [
+        {
+          "text": "Lanjut",
+          "next": "scene099"
+        }
+      ]
+    },
+    "scene099": {
+      "id": "scene099",
+      "dialogue": {
+        "speaker": "Kamu",
+        "text": "Aku tertawa ringan, ekspresi khusus itu muncul sebentar sebelum hilang."
+      },
+      "background": "assets/bg/room.jpg",
+      "character": "assets/char/mahiru.png",
+      "characters": [
+        {
+          "name": "Mahiru",
+          "pose": "default",
+          "emotion": "lega"
+        }
+      ],
+      "choices": [
+        {
+          "text": "Lanjut",
+          "next": "scene100"
+        }
+      ]
+    },
+    "scene100": {
+      "id": "scene100",
+      "dialogue": {
+        "speaker": "Mahiru",
+        "text": "Ada getar di suaraku, semacam kerinduan yang belum sempat kuucapkan."
+      },
+      "background": "assets/bg/room.jpg",
+      "character": "assets/char/mahiru.png",
+      "characters": [
+        {
+          "name": "Mahiru",
+          "pose": "default",
+          "emotion": "lembut"
+        }
+      ],
+      "choices": [
+        {
+          "text": "Lanjut",
+          "next": "scene101"
+        }
+      ]
+    },
+    "scene101": {
+      "id": "scene101",
+      "dialogue": {
+        "speaker": "Kamu",
+        "text": "Aku melihatmu dengan ekspresi lembut, seolah ada cerita yang belum kamu dengar."
+      },
+      "background": "assets/bg/room.jpg",
+      "character": "assets/char/mahiru.png",
+      "characters": [
+        {
+          "name": "Mahiru",
+          "pose": "default",
+          "emotion": "tersenyum"
+        }
+      ],
+      "choices": [
+        {
+          "text": "Lanjut",
+          "next": "scene102"
+        }
+      ]
+    },
+    "scene102": {
+      "id": "scene102",
+      "dialogue": {
+        "speaker": "Mahiru",
+        "text": "Kamu menatap balik, dan aku merasakan ketertarikan yang halus di udara."
+      },
+      "background": "assets/bg/room.jpg",
+      "character": "assets/char/mahiru.png",
+      "characters": [
+        {
+          "name": "Mahiru",
+          "pose": "default",
+          "emotion": "serius"
+        }
+      ],
+      "choices": [
+        {
+          "text": "Lanjut",
+          "next": "scene103"
+        }
+      ]
+    },
+    "scene103": {
+      "id": "scene103",
+      "dialogue": {
+        "speaker": "Kamu",
+        "text": "Di balik senyumku, ada rahasia kecil yang belum kubuka."
+      },
+      "background": "assets/bg/room.jpg",
+      "character": "assets/char/mahiru.png",
+      "characters": [
+        {
+          "name": "Mahiru",
+          "pose": "default",
+          "emotion": "cemas"
+        }
+      ],
+      "choices": [
+        {
+          "text": "Lanjut",
+          "next": "scene104"
+        }
+      ]
+    },
+    "scene104": {
+      "id": "scene104",
+      "dialogue": {
+        "speaker": "Mahiru",
+        "text": "Aku memberi isyarat halus, sebuah ekspresi khusus yang hanya kamu pahami."
+      },
+      "background": "assets/bg/room.jpg",
+      "character": "assets/char/mahiru.png",
+      "characters": [
+        {
+          "name": "Mahiru",
+          "pose": "default",
+          "emotion": "penasaran"
+        }
+      ],
+      "choices": [
+        {
+          "text": "Lanjut",
+          "next": "scene105"
+        }
+      ]
+    },
+    "scene105": {
+      "id": "scene105",
+      "dialogue": {
+        "speaker": "Kamu",
+        "text": "Kalimatku pelan, namun ada daya tarik yang membuatmu mendekat."
+      },
+      "background": "assets/bg/room.jpg",
+      "character": "assets/char/mahiru.png",
+      "characters": [
+        {
+          "name": "Mahiru",
+          "pose": "default",
+          "emotion": "hangat"
+        }
+      ],
+      "choices": [
+        {
+          "text": "Lanjut",
+          "next": "scene106"
+        }
+      ]
+    },
+    "scene106": {
+      "id": "scene106",
+      "dialogue": {
+        "speaker": "Mahiru",
+        "text": "Kamu mengenali ekspresi khususku, tanda bahwa kita harus bicara tanpa suara."
+      },
+      "background": "assets/bg/room.jpg",
+      "character": "assets/char/mahiru.png",
+      "characters": [
+        {
+          "name": "Mahiru",
+          "pose": "default",
+          "emotion": "misterius"
+        }
+      ],
+      "choices": [
+        {
+          "text": "Lanjut",
+          "next": "scene107"
+        }
+      ]
+    },
+    "scene107": {
+      "id": "scene107",
+      "dialogue": {
+        "speaker": "Kamu",
+        "text": "Kita berjalan seirama, dan aku menjaga rahasia itu tetap aman."
+      },
+      "background": "assets/bg/room.jpg",
+      "character": "assets/char/mahiru.png",
+      "characters": [
+        {
+          "name": "Mahiru",
+          "pose": "default",
+          "emotion": "bercanda"
+        }
+      ],
+      "choices": [
+        {
+          "text": "Lanjut",
+          "next": "scene108"
+        }
+      ]
+    },
+    "scene108": {
+      "id": "scene108",
+      "dialogue": {
+        "speaker": "Mahiru",
+        "text": "Tatapanku mengandung ajakan, bukan janji, tapi cukup membuatmu ingin tahu."
+      },
+      "background": "assets/bg/room.jpg",
+      "character": "assets/char/mahiru.png",
+      "characters": [
+        {
+          "name": "Mahiru",
+          "pose": "default",
+          "emotion": "tegas"
+        }
+      ],
+      "choices": [
+        {
+          "text": "Lanjut",
+          "next": "scene109"
+        }
+      ]
+    },
+    "scene109": {
+      "id": "scene109",
+      "dialogue": {
+        "speaker": "Kamu",
+        "text": "Aku mendekat sedikit, cukup untuk membuatmu sadar akan ketertarikan kita."
+      },
+      "background": "assets/bg/room.jpg",
+      "character": "assets/char/mahiru.png",
+      "characters": [
+        {
+          "name": "Mahiru",
+          "pose": "default",
+          "emotion": "gugup"
+        }
+      ],
+      "choices": [
+        {
+          "text": "Lanjut",
+          "next": "scene110"
+        }
+      ]
+    },
+    "scene110": {
+      "id": "scene110",
+      "dialogue": {
+        "speaker": "Mahiru",
+        "text": "Ada getar di suaraku, semacam kerinduan yang belum sempat kuucapkan."
+      },
+      "background": "assets/bg/room.jpg",
+      "character": "assets/char/mahiru.png",
+      "characters": [
+        {
+          "name": "Mahiru",
+          "pose": "default",
+          "emotion": "tenang"
+        }
+      ],
+      "choices": [
+        {
+          "text": "Lanjut",
+          "next": "scene111"
+        }
+      ]
+    },
+    "scene111": {
+      "id": "scene111",
+      "dialogue": {
+        "speaker": "Kamu",
+        "text": "Ada rahasia di balik gelangku, petunjuk yang tidak berani kutunjukkan."
+      },
+      "background": "assets/bg/room.jpg",
+      "character": "assets/char/mahiru.png",
+      "characters": [
+        {
+          "name": "Mahiru",
+          "pose": "default",
+          "emotion": "menggoda"
+        }
+      ],
+      "choices": [
+        {
+          "text": "Lanjut",
+          "next": "scene112"
+        }
+      ]
+    },
+    "scene112": {
+      "id": "scene112",
+      "dialogue": {
+        "speaker": "Mahiru",
+        "text": "Kamu menatap balik, dan aku merasakan ketertarikan yang halus di udara."
+      },
+      "background": "assets/bg/room.jpg",
+      "character": "assets/char/mahiru.png",
+      "characters": [
+        {
+          "name": "Mahiru",
+          "pose": "default",
+          "emotion": "terkejut"
+        }
+      ],
+      "choices": [
+        {
+          "text": "Lanjut",
+          "next": "scene113"
+        }
+      ]
+    },
+    "scene113": {
+      "id": "scene113",
+      "dialogue": {
+        "speaker": "Kamu",
+        "text": "Di balik senyumku, ada rahasia kecil yang belum kubuka."
+      },
+      "background": "assets/bg/room.jpg",
+      "character": "assets/char/mahiru.png",
+      "characters": [
+        {
+          "name": "Mahiru",
+          "pose": "default",
+          "emotion": "percaya diri"
+        }
+      ],
+      "choices": [
+        {
+          "text": "Lanjut",
+          "next": "scene114"
+        }
+      ]
+    },
+    "scene114": {
+      "id": "scene114",
+      "dialogue": {
+        "speaker": "Mahiru",
+        "text": "Aku memberi isyarat halus, sebuah ekspresi khusus yang hanya kamu pahami."
+      },
+      "background": "assets/bg/room.jpg",
+      "character": "assets/char/mahiru.png",
+      "characters": [
+        {
+          "name": "Mahiru",
+          "pose": "default",
+          "emotion": "waspada"
+        }
+      ],
+      "choices": [
+        {
+          "text": "Lanjut",
+          "next": "scene115"
+        }
+      ]
+    },
+    "scene115": {
+      "id": "scene115",
+      "dialogue": {
+        "speaker": "Kamu",
+        "text": "Kalimatku pelan, namun ada daya tarik yang membuatmu mendekat."
+      },
+      "background": "assets/bg/room.jpg",
+      "character": "assets/char/mahiru.png",
+      "characters": [
+        {
+          "name": "Mahiru",
+          "pose": "default",
+          "emotion": "tersipu"
+        }
+      ],
+      "choices": [
+        {
+          "text": "Lanjut",
+          "next": "scene116"
+        }
+      ]
+    },
+    "scene116": {
+      "id": "scene116",
+      "dialogue": {
+        "speaker": "Mahiru",
+        "text": "Aku menggenggam pikiranku sendiri: semua ini lebih rumit dari yang terlihat."
+      },
+      "background": "assets/bg/room.jpg",
+      "character": "assets/char/mahiru.png",
+      "characters": [
+        {
+          "name": "Mahiru",
+          "pose": "default",
+          "emotion": "berapi-api"
+        }
+      ],
+      "choices": [
+        {
+          "text": "Lanjut",
+          "next": "scene117"
+        }
+      ]
+    },
+    "scene117": {
+      "id": "scene117",
+      "dialogue": {
+        "speaker": "Kamu",
+        "text": "Kita berjalan seirama, dan aku menjaga rahasia itu tetap aman."
+      },
+      "background": "assets/bg/room.jpg",
+      "character": "assets/char/mahiru.png",
+      "characters": [
+        {
+          "name": "Mahiru",
+          "pose": "default",
+          "emotion": "melankolis"
+        }
+      ],
+      "choices": [
+        {
+          "text": "Lanjut",
+          "next": "scene118"
+        }
+      ]
+    },
+    "scene118": {
+      "id": "scene118",
+      "dialogue": {
+        "speaker": "Mahiru",
+        "text": "Tatapanku mengandung ajakan, bukan janji, tapi cukup membuatmu ingin tahu."
+      },
+      "background": "assets/bg/room.jpg",
+      "character": "assets/char/mahiru.png",
+      "characters": [
+        {
+          "name": "Mahiru",
+          "pose": "default",
+          "emotion": "berharap"
+        }
+      ],
+      "choices": [
+        {
+          "text": "Lanjut",
+          "next": "scene119"
+        }
+      ]
+    },
+    "scene119": {
+      "id": "scene119",
+      "dialogue": {
+        "speaker": "Kamu",
+        "text": "Aku tertawa ringan, ekspresi khusus itu muncul sebentar sebelum hilang."
+      },
+      "background": "assets/bg/room.jpg",
+      "character": "assets/char/mahiru.png",
+      "characters": [
+        {
+          "name": "Mahiru",
+          "pose": "default",
+          "emotion": "lega"
+        }
+      ],
+      "choices": [
+        {
+          "text": "Lanjut",
+          "next": "scene120"
+        }
+      ]
+    },
+    "scene120": {
+      "id": "scene120",
+      "dialogue": {
+        "speaker": "Mahiru",
+        "text": "Ada getar di suaraku, semacam kerinduan yang belum sempat kuucapkan."
+      },
+      "background": "assets/bg/room.jpg",
+      "character": "assets/char/mahiru.png",
+      "characters": [
+        {
+          "name": "Mahiru",
+          "pose": "default",
+          "emotion": "lembut"
+        }
+      ],
       "choices": []
     }
   }

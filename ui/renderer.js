@@ -6,7 +6,9 @@ const elements = {};
 const ensureElements = () => {
   if (elements.ready) return;
   elements.game = document.getElementById('game');
-  elements.background = document.getElementById('background');
+  elements.scene = document.getElementById('scene');
+  elements.background = document.getElementById('bg');
+  elements.character = document.getElementById('character');
   elements.characters = document.getElementById('characters');
   elements.nameBox = document.getElementById('name');
   elements.textBox = document.getElementById('text');
@@ -15,11 +17,50 @@ const ensureElements = () => {
   elements.ready = true;
 };
 
+const looksLikeGradient = (value) => typeof value === 'string' && value.includes('gradient');
+const spriteClassMap = {
+  idle: 'is-idle',
+  talk: 'is-talk',
+  happy: 'is-happy',
+  sad: 'is-sad',
+};
+const spritePath = (sprite) => (sprite ? `assets/char/mahiru/${sprite}.png` : null);
+
 export const renderScene = (node, onChoice) => {
   ensureElements();
   if (!node) return;
 
-  applySceneTransition(elements.background, node.background);
+  if (looksLikeGradient(node.background)) {
+    if (elements.background) {
+      elements.background.removeAttribute('src');
+    }
+    applySceneTransition(elements.scene, node.background);
+  } else if (node.background) {
+    applySceneTransition(elements.scene, null);
+    if (elements.background) {
+      elements.background.src = node.background;
+    }
+  }
+
+  if (elements.character) {
+    const sprite = node.characterSprite || 'idle';
+    const spriteSrc = spritePath(sprite);
+    elements.character.classList.remove(...Object.values(spriteClassMap));
+    if (spriteClassMap[sprite]) {
+      elements.character.classList.add(spriteClassMap[sprite]);
+    }
+
+    if (spriteSrc) {
+      elements.character.src = spriteSrc;
+      elements.character.style.display = 'block';
+    } else if (node.character) {
+      elements.character.src = node.character;
+      elements.character.style.display = 'block';
+    } else {
+      elements.character.removeAttribute('src');
+      elements.character.style.display = 'none';
+    }
+  }
 
   elements.characters.innerHTML = '';
   node.characters?.forEach((character) => {

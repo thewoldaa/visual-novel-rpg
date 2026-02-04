@@ -1,5 +1,14 @@
-import { setActiveProfile, getState, applyEffects, getProgress, updateProgress } from './state.js';
+import {
+  setActiveProfile,
+  getState,
+  getEndings,
+  applyEffects,
+  getProgress,
+  updateProgress,
+  unlockEnding
+} from './state.js';
 import { renderScene, updateStatus } from '../ui/renderer.js';
+import { initControls } from '../ui/controls.js';
 import { initLogin } from '../auth/login.js';
 import embeddedScenes from '../data/scenes.js';
 
@@ -67,8 +76,11 @@ const advanceTo = (nextId, effects = null) => {
 const renderCurrent = () => {
   const node = getNode();
   if (!node) return;
+  if (node.ending) {
+    unlockEnding(node.ending);
+  }
   renderScene(node, advanceTo);
-  updateStatus(getState());
+  updateStatus(getState(), getEndings());
 };
 
 const start = async () => {
@@ -79,6 +91,7 @@ const start = async () => {
 };
 
 export const initEngine = () => {
+  initControls();
   initLogin((profileId) => {
     setActiveProfile(profileId);
     start();

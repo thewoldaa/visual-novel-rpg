@@ -69,6 +69,8 @@ export const getState = () => profileData.state;
 
 export const getProgress = () => profileData.progress;
 
+export const getEndings = () => profileData.endings;
+
 export const setActiveProfile = (profileId) => {
   activeProfileId = profileId;
   const loaded = loadProfileData(profileId);
@@ -78,6 +80,12 @@ export const setActiveProfile = (profileId) => {
 
 export const resetState = () => {
   profileData.state = defaultState();
+  saveProfileData();
+};
+
+export const resetProgress = () => {
+  profileData.progress = null;
+  profileData.endings = [];
   saveProfileData();
 };
 
@@ -103,6 +111,13 @@ export const applyEffects = (effects = {}) => {
       next.flags = { ...next.flags, ...value };
     } else if (key === 'memoryLog' && Array.isArray(value)) {
       next.memoryLog = [...next.memoryLog, ...value];
+    } else if (key === 'inventory' && Array.isArray(value)) {
+      const existing = new Set(next.inventory);
+      value.forEach((item) => existing.add(item));
+      next.inventory = [...existing];
+    } else if (key === 'inventoryRemove' && Array.isArray(value)) {
+      const toRemove = new Set(value);
+      next.inventory = next.inventory.filter((item) => !toRemove.has(item));
     }
   });
   profileData.state = next;

@@ -14,6 +14,15 @@ const ensureElements = () => {
   elements.textBox = document.getElementById('text');
   elements.choicesBox = document.getElementById('choices');
   elements.statusBox = document.getElementById('status');
+  elements.chapter = document.getElementById('chapter');
+  elements.mood = document.getElementById('mood');
+  elements.prompt = document.getElementById('prompt');
+  elements.affection = document.getElementById('affection');
+  elements.trust = document.getElementById('trust');
+  elements.loneliness = document.getElementById('loneliness');
+  elements.inventoryList = document.getElementById('inventory-list');
+  elements.memoryLog = document.getElementById('memory-log');
+  elements.endingsList = document.getElementById('endings-list');
   elements.ready = true;
 };
 
@@ -60,6 +69,16 @@ export const renderScene = (node, onChoice) => {
   elements.textBox.textContent = node.dialogue?.text ?? '';
   applyDialogueEffects(elements.textBox);
 
+  if (elements.chapter) {
+    elements.chapter.textContent = node.chapter ?? 'Babak Awal';
+  }
+  if (elements.mood) {
+    elements.mood.textContent = node.mood ?? 'Tenang';
+  }
+  if (elements.prompt) {
+    elements.prompt.textContent = node.prompt ?? 'Dengarkan napasmu dan pilih langkah berikutnya.';
+  }
+
   elements.choicesBox.innerHTML = '';
   if (node.choices && node.choices.length) {
     node.choices.forEach((choice) => {
@@ -82,10 +101,39 @@ export const renderScene = (node, onChoice) => {
   }
 };
 
-export const updateStatus = (state) => {
+const renderList = (element, items, emptyLabel) => {
+  if (!element) return;
+  element.innerHTML = '';
+  if (!items || !items.length) {
+    const item = document.createElement('li');
+    item.className = 'hud-empty';
+    item.textContent = emptyLabel;
+    element.appendChild(item);
+    return;
+  }
+  items.forEach((entry) => {
+    const item = document.createElement('li');
+    item.textContent = entry;
+    element.appendChild(item);
+  });
+};
+
+export const updateStatus = (state, endings = []) => {
   ensureElements();
   if (!state) return;
   elements.statusBox.textContent = `HP ${state.hp} · Mental ${state.mental} · Sanity ${state.sanity}`;
+  if (elements.affection) {
+    elements.affection.textContent = `${state.affection}`;
+  }
+  if (elements.trust) {
+    elements.trust.textContent = `${state.trust}`;
+  }
+  if (elements.loneliness) {
+    elements.loneliness.textContent = `${state.loneliness}`;
+  }
+  renderList(elements.inventoryList, state.inventory, 'Belum ada bekal.');
+  renderList(elements.memoryLog, state.memoryLog, 'Kenanganmu masih kosong.');
+  renderList(elements.endingsList, endings, 'Belum ada akhir yang tersimpan.');
   if (elements.game) {
     elements.game.classList.toggle('state-low-sanity', state.sanity <= 45);
     elements.game.classList.toggle('state-high-sanity', state.sanity >= 75);

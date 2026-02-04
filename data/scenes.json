@@ -1,0 +1,214 @@
+{
+  "start": "intro",
+  "nodes": {
+    "intro": {
+      "id": "intro",
+      "background": "linear-gradient(135deg, #f7d6ff, #dbeafe)",
+      "characters": [
+        { "name": "Mahiru", "pose": "default", "emotion": "lembut" }
+      ],
+      "dialogue": {
+        "speaker": "Mahiru",
+        "text": "Kamu akhirnya bangun. Aku menunggu di sini sejak tadi.",
+        "emotionImpact": {
+          "affection": 1,
+          "anxiety": 1
+        }
+      },
+      "choices": [
+        { "text": "Aku baik-baik saja.", "next": "rutinitas", "effects": { "affection": 1 } },
+        { "text": "Aku masih bingung.", "next": "retakan", "effects": { "trust": -1 } }
+      ]
+    },
+    "rutinitas": {
+      "id": "rutinitas",
+      "background": "linear-gradient(135deg, #fce7f3, #ede9fe)",
+      "characters": [
+        { "name": "Mahiru", "pose": "default", "emotion": "lega" }
+      ],
+      "dialogue": {
+        "speaker": "Mahiru",
+        "text": "Syukurlah. Kita bisa kembali ke rutinitas kecil yang tenang.",
+        "emotionImpact": {
+          "affection": 2
+        }
+      },
+      "choices": [
+        { "text": "Lanjutkan", "next": "retakan" }
+      ]
+    },
+    "retakan": {
+      "id": "retakan",
+      "background": "linear-gradient(135deg, #e0f2fe, #fef9c3)",
+      "characters": [
+        { "name": "Mahiru", "pose": "default", "emotion": "waspada" }
+      ],
+      "dialogue": {
+        "speaker": "Mahiru",
+        "text": "Aku melihat ada retakan kecil di kepercayaanmu padaku.",
+        "emotionImpact": {
+          "anxiety": 2
+        }
+      },
+      "choices": [
+        { "text": "Lanjutkan", "next": "konflik" }
+      ]
+    },
+    "konflik": {
+      "id": "konflik",
+      "background": "linear-gradient(135deg, #fdf2f8, #e2e8f0)",
+      "characters": [
+        { "name": "Mahiru", "pose": "default", "emotion": "diam" }
+      ],
+      "dialogue": {
+        "speaker": "Mahiru",
+        "text": "Konflik ini tidak terdengar keras, tapi terasa berat.",
+        "emotionImpact": {
+          "trust": -1,
+          "anxiety": 1
+        }
+      },
+      "choices": [
+        { "text": "Lanjutkan", "next": "pilihan-moral" }
+      ]
+    },
+    "pilihan-moral": {
+      "id": "pilihan-moral",
+      "background": "linear-gradient(135deg, #fef3c7, #fee2e2)",
+      "characters": [
+        { "name": "Mahiru", "pose": "default", "emotion": "ragu" }
+      ],
+      "dialogue": {
+        "speaker": "Mahiru",
+        "text": "Aku butuh jawabanmu, bukan karena ingin menang, tapi agar tahu arah kita.",
+        "emotionImpact": {
+          "trust": 1,
+          "anxiety": 1
+        }
+      },
+      "choices": [
+        { "text": "Aku akan bertahan.", "next": "perubahan-nada", "effects": { "affection": 1 } },
+        { "text": "Aku masih harus sendiri.", "next": "jarak-emosional", "effects": { "loneliness": 2 } }
+      ]
+    },
+    "perubahan-nada": {
+      "id": "perubahan-nada",
+      "background": "linear-gradient(135deg, #e0f2fe, #f0f9ff)",
+      "characters": [
+        { "name": "Mahiru", "pose": "default", "emotion": "hangat" }
+      ],
+      "dialogue": {
+        "speaker": "Mahiru",
+        "text": "Nada suaraku berubah tanpa sadar. Mungkin aku ingin lebih jujur.",
+        "emotionImpact": {
+          "affection": 2
+        }
+      },
+      "choices": [
+        { "text": "Lanjutkan", "next": "rahasia" }
+      ]
+    },
+    "rahasia": {
+      "id": "rahasia",
+      "background": "linear-gradient(135deg, #ede9fe, #fce7f3)",
+      "characters": [
+        { "name": "Mahiru", "pose": "default", "emotion": "rentan" }
+      ],
+      "dialogue": {
+        "speaker": "Mahiru",
+        "text": "Ada rahasia yang tak pernah benar-benar kututup.",
+        "emotionImpact": {
+          "anxiety": 2,
+          "trust": 1
+        }
+      },
+      "choices": [
+        { "text": "Aku mendengarkan.", "next": "jarak-emosional", "effects": { "affection": 1 } }
+      ]
+    },
+    "jarak-emosional": {
+      "id": "jarak-emosional",
+      "background": "linear-gradient(135deg, #f8fafc, #e2e8f0)",
+      "characters": [
+        { "name": "Mahiru", "pose": "default", "emotion": "menjauh" }
+      ],
+      "dialogue": {
+        "speaker": "Mahiru",
+        "text": "Ada jarak yang tak terlihat. Aku menahannya agar kamu tidak lelah.",
+        "emotionImpact": {
+          "loneliness": 2
+        }
+      },
+      "choices": [
+        { "text": "Tetap di sini.", "next": "kehilangan", "effects": { "trust": 1 } }
+      ]
+    },
+    "kehilangan": {
+      "id": "kehilangan",
+      "background": "linear-gradient(135deg, #fdf2f8, #fee2e2)",
+      "characters": [
+        { "name": "Mahiru", "pose": "default", "emotion": "lelah" }
+      ],
+      "dialogue": {
+        "speaker": "Mahiru",
+        "text": "Aku sempat merasa kehilangan, walau kamu masih di depan mataku.",
+        "emotionImpact": {
+          "anxiety": 2
+        }
+      },
+      "choices": [
+        { "text": "Lanjutkan", "next": "kesadaran-meta" }
+      ]
+    },
+    "kesadaran-meta": {
+      "id": "kesadaran-meta",
+      "background": "linear-gradient(135deg, #f1f5f9, #e2e8f0)",
+      "characters": [
+        { "name": "Mahiru", "pose": "default", "emotion": "bingung" }
+      ],
+      "dialogue": {
+        "speaker": "Mahiru",
+        "text": "Kamu… pernah sampai di sini sebelumnya, ya?",
+        "fallbackText": "Mahiru menarik napas panjang, seolah menimbang kata-kata.",
+        "emotionImpact": {
+          "anxiety": 3
+        }
+      },
+      "choices": [
+        { "text": "Tidak, ini pertama kali.", "next": "penolakan", "effects": { "trust": -1 } },
+        { "text": "Mungkin iya.", "next": "penerimaan", "effects": { "trust": 1 } }
+      ]
+    },
+    "penolakan": {
+      "id": "penolakan",
+      "background": "linear-gradient(135deg, #fef2f2, #fee2e2)",
+      "characters": [
+        { "name": "Mahiru", "pose": "default", "emotion": "pahit" }
+      ],
+      "dialogue": {
+        "speaker": "Mahiru",
+        "text": "Kalau begitu, aku akan menutup pintu ini dulu.",
+        "emotionImpact": {
+          "affection": -1
+        }
+      },
+      "choices": []
+    },
+    "penerimaan": {
+      "id": "penerimaan",
+      "background": "linear-gradient(135deg, #ecfeff, #e0f2fe)",
+      "characters": [
+        { "name": "Mahiru", "pose": "default", "emotion": "tenang" }
+      ],
+      "dialogue": {
+        "speaker": "Mahiru",
+        "text": "Jika begitu, ayo kita hadapi dengan jujur, bersama.",
+        "emotionImpact": {
+          "affection": 2,
+          "trust": 2
+        }
+      },
+      "choices": []
+    }
+  }
+}

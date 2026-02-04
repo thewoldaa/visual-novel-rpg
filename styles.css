@@ -32,6 +32,19 @@ body {
   backdrop-filter: blur(12px);
 }
 
+#game.state-low-sanity {
+  box-shadow: 0 24px 60px rgba(76, 24, 94, 0.35);
+  filter: saturate(0.92);
+}
+
+#game.state-high-sanity {
+  box-shadow: 0 24px 60px rgba(64, 120, 168, 0.2);
+}
+
+#game.state-high-lonely #dialogue-box {
+  background: rgba(255, 255, 255, 0.6);
+}
+
 #background {
   position: absolute;
   inset: 0;

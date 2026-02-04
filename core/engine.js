@@ -9,16 +9,33 @@ let scenes = fallbackScenes;
 let activeNodeId = fallbackScenes.start;
 
 const isValidNode = (nodeId) => Boolean(nodeId && scenes.nodes[nodeId]);
+const hasValidNode = (node) => {
+  if (!node || typeof node !== 'object') return false;
+  if (!node.id) return false;
+  if (!node.dialogue || typeof node.dialogue.text !== 'string') return false;
+  if (!Array.isArray(node.choices)) return false;
+  return true;
+};
+
+const validateScenes = (data) => {
+  if (!data || typeof data !== 'object') return false;
+  if (!data.start || !data.nodes || typeof data.nodes !== 'object') return false;
+  const nodeEntries = Object.values(data.nodes);
+  if (!nodeEntries.length) return false;
+  return nodeEntries.every(hasValidNode);
+};
 
 const loadScenes = async () => {
+  const scenesUrl = new URL('../data/scenes.json', import.meta.url);
   try {
-    const response = await fetch('./data/scenes.json');
+    const response = await fetch(scenesUrl);
     if (!response.ok) throw new Error('Gagal memuat data');
     const data = await response.json();
-    if (data && data.nodes) {
+    if (validateScenes(data)) {
       scenes = data;
       return;
     }
+    console.warn('Scenes JSON tidak valid, menggunakan fallback.');
   } catch (error) {
     scenes = fallbackScenes;
   }

@@ -5,6 +5,7 @@ const elements = {};
 
 const ensureElements = () => {
   if (elements.ready) return;
+  elements.game = document.getElementById('game');
   elements.background = document.getElementById('background');
   elements.characters = document.getElementById('characters');
   elements.nameBox = document.getElementById('name');
@@ -61,4 +62,9 @@ export const updateStatus = (state) => {
   ensureElements();
   if (!state) return;
   elements.statusBox.textContent = `HP ${state.hp} · Mental ${state.mental} · Sanity ${state.sanity}`;
+  if (elements.game) {
+    elements.game.classList.toggle('state-low-sanity', state.sanity <= 45);
+    elements.game.classList.toggle('state-high-sanity', state.sanity >= 75);
+    elements.game.classList.toggle('state-high-lonely', state.loneliness >= 60);
+  }
 };

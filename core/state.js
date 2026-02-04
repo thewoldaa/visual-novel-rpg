@@ -38,6 +38,14 @@ const normalizeProfile = (rawProfile) => {
   };
 };
 
+const clamp = (value, min, max) => Math.min(Math.max(value, min), max);
+
+const clampStat = (key, value) => {
+  const boundedKeys = new Set(['hp', 'mental', 'sanity', 'affection', 'trust', 'loneliness']);
+  if (!boundedKeys.has(key)) return value;
+  return clamp(value, 0, 100);
+};
+
 const loadProfileData = (profileId) => {
   const storage = safeStorage();
   if (!storage) return null;
@@ -90,7 +98,7 @@ export const applyEffects = (effects = {}) => {
   const next = { ...profileData.state };
   Object.entries(effects).forEach(([key, value]) => {
     if (typeof next[key] === 'number') {
-      next[key] += value;
+      next[key] = clampStat(key, next[key] + value);
     } else if (key === 'flags' && typeof value === 'object') {
       next.flags = { ...next.flags, ...value };
     } else if (key === 'memoryLog' && Array.isArray(value)) {

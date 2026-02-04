@@ -1,5 +1,13 @@
-const PROFILE_KEY = 'vnrpg_profiles';
+const PROFILE_LIST_KEY = 'vnrpg_profiles';
+const PROFILE_PREFIX = 'vnrpg_profile_';
 const ACTIVE_KEY = 'vnrpg_active_profile';
+
+const defaultProfile = (name) => ({
+  id: name,
+  progress: null,
+  state: null,
+  endings: []
+});
 
 const safeStorage = () => {
   try {
@@ -12,7 +20,7 @@ const safeStorage = () => {
 const loadProfiles = () => {
   const storage = safeStorage();
   if (!storage) return [];
-  const raw = storage.getItem(PROFILE_KEY);
+  const raw = storage.getItem(PROFILE_LIST_KEY);
   if (!raw) return [];
   try {
     return JSON.parse(raw);
@@ -24,7 +32,7 @@ const loadProfiles = () => {
 const saveProfiles = (profiles) => {
   const storage = safeStorage();
   if (!storage) return;
-  storage.setItem(PROFILE_KEY, JSON.stringify(profiles));
+  storage.setItem(PROFILE_LIST_KEY, JSON.stringify(profiles));
 };
 
 const setActiveProfile = (profile) => {
@@ -37,6 +45,14 @@ const getActiveProfile = () => {
   const storage = safeStorage();
   if (!storage) return null;
   return storage.getItem(ACTIVE_KEY);
+};
+
+const ensureProfileRecord = (name) => {
+  const storage = safeStorage();
+  if (!storage) return;
+  const key = `${PROFILE_PREFIX}${name}`;
+  if (storage.getItem(key)) return;
+  storage.setItem(key, JSON.stringify(defaultProfile(name)));
 };
 
 export const initLogin = (onReady) => {
@@ -55,6 +71,7 @@ export const initLogin = (onReady) => {
       button.className = 'profile-button';
       button.textContent = profile;
       button.addEventListener('click', () => {
+        ensureProfileRecord(profile);
         setActiveProfile(profile);
         overlay.classList.add('hidden');
         onReady(profile);
@@ -66,6 +83,7 @@ export const initLogin = (onReady) => {
   renderList();
 
   if (current) {
+    ensureProfileRecord(current);
     overlay.classList.add('hidden');
     onReady(current);
     return;
@@ -80,6 +98,7 @@ export const initLogin = (onReady) => {
       profiles.push(name);
       saveProfiles(profiles);
     }
+    ensureProfileRecord(name);
     setActiveProfile(name);
     overlay.classList.add('hidden');
     onReady(name);

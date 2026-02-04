@@ -1,4 +1,4 @@
-const STORAGE_PREFIX = 'vnrpg_state_';
+const STORAGE_PREFIX = 'vnrpg_profile_';
 
 const defaultState = () => ({
   hp: 100,
@@ -12,8 +12,14 @@ const defaultState = () => ({
   memoryLog: []
 });
 
-let activeProfile = null;
-let state = defaultState();
+const defaultProfile = () => ({
+  progress: null,
+  state: defaultState(),
+  endings: []
+});
+
+let activeProfileId = null;
+let profileData = defaultProfile();
 
 const safeStorage = () => {
   try {
@@ -23,29 +29,65 @@ const safeStorage = () => {
   }
 };
 
-export const getState = () => state;
+const normalizeProfile = (rawProfile) => {
+  if (!rawProfile) return defaultProfile();
+  return {
+    progress: rawProfile.progress ?? null,
+    state: rawProfile.state ?? defaultState(),
+    endings: Array.isArray(rawProfile.endings) ? rawProfile.endings : []
+  };
+};
+
+const loadProfileData = (profileId) => {
+  const storage = safeStorage();
+  if (!storage) return null;
+  const raw = storage.getItem(`${STORAGE_PREFIX}${profileId}`);
+  if (!raw) return null;
+  try {
+    return JSON.parse(raw);
+  } catch (error) {
+    return null;
+  }
+};
+
+const saveProfileData = () => {
+  if (!activeProfileId) return;
+  const storage = safeStorage();
+  if (!storage) return;
+  storage.setItem(`${STORAGE_PREFIX}${activeProfileId}`, JSON.stringify(profileData));
+};
+
+export const getState = () => profileData.state;
+
+export const getProgress = () => profileData.progress;
 
 export const setActiveProfile = (profileId) => {
-  activeProfile = profileId;
-  state = loadState(profileId) ?? defaultState();
-  saveState();
+  activeProfileId = profileId;
+  const loaded = loadProfileData(profileId);
+  profileData = normalizeProfile(loaded);
+  saveProfileData();
 };
 
 export const resetState = () => {
-  state = defaultState();
-  saveState();
+  profileData.state = defaultState();
+  saveProfileData();
 };
 
 export const updateState = (patch) => {
-  state = {
-    ...state,
+  profileData.state = {
+    ...profileData.state,
     ...patch
   };
-  saveState();
+  saveProfileData();
+};
+
+export const updateProgress = (nodeId) => {
+  profileData.progress = nodeId;
+  saveProfileData();
 };
 
 export const applyEffects = (effects = {}) => {
-  const next = { ...state };
+  const next = { ...profileData.state };
   Object.entries(effects).forEach(([key, value]) => {
     if (typeof next[key] === 'number') {
       next[key] += value;
@@ -55,25 +97,14 @@ export const applyEffects = (effects = {}) => {
       next.memoryLog = [...next.memoryLog, ...value];
     }
   });
-  state = next;
-  saveState();
+  profileData.state = next;
+  saveProfileData();
 };
 
-export const saveState = () => {
-  if (!activeProfile) return;
-  const storage = safeStorage();
-  if (!storage) return;
-  storage.setItem(`${STORAGE_PREFIX}${activeProfile}`, JSON.stringify(state));
-};
-
-export const loadState = (profileId) => {
-  const storage = safeStorage();
-  if (!storage) return null;
-  const raw = storage.getItem(`${STORAGE_PREFIX}${profileId}`);
-  if (!raw) return null;
-  try {
-    return JSON.parse(raw);
-  } catch (error) {
-    return null;
+export const unlockEnding = (endingId) => {
+  if (!endingId) return;
+  if (!profileData.endings.includes(endingId)) {
+    profileData.endings = [...profileData.endings, endingId];
+    saveProfileData();
   }
 };

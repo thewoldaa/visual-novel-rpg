@@ -2,41 +2,168 @@
 <html lang="id">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>RPG Visual Novel - Engine Inti</title>
-  <link rel="stylesheet" href="styles.css" />
+  <title>Visual Novel RPG - Localhost</title>
+  <style>
+    * { box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
+    body {
+      margin: 0;
+      background: linear-gradient(180deg, #f6f7fb, #e9ebf5);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    #game {
+      width: 900px;
+      height: 520px;
+      background: #fff;
+      border-radius: 16px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+      overflow: hidden;
+      position: relative;
+    }
+    #background {
+      position: absolute;
+      inset: 0;
+      transition: background 0.6s ease;
+    }
+    #character {
+      position: absolute;
+      bottom: 80px;
+      right: 80px;
+      width: 260px;
+      height: 360px;
+      background: radial-gradient(circle at top, #ffeef5, #e6b7c8);
+      border-radius: 20px 20px 60px 60px;
+      box-shadow: inset 0 0 0 6px rgba(255,255,255,0.4);
+    }
+    #dialogue-box {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      height: 150px;
+      background: rgba(255,255,255,0.95);
+      border-top: 2px solid #eee;
+      padding: 16px 24px;
+    }
+    #name { font-weight: bold; color: #b24a6b; margin-bottom: 6px; }
+    #text { font-size: 16px; line-height: 1.5; color: #333; }
+    #choices { margin-top: 10px; }
+    .choice {
+      display: inline-block;
+      margin-right: 12px;
+      padding: 6px 14px;
+      border-radius: 20px;
+      background: #f1f1f7;
+      cursor: pointer;
+    }
+    .choice:hover { background: #d8dcff; }
+    #status {
+      position: absolute;
+      top: 12px;
+      left: 12px;
+      background: rgba(255,255,255,0.85);
+      padding: 8px 12px;
+      border-radius: 12px;
+      font-size: 13px;
+    }
+  </style>
 </head>
 <body>
-  <div id="login-overlay" class="overlay">
-    <div class="login-card">
-      <h1>Masuk Profil</h1>
-      <p>Gunakan nama pengguna untuk menyimpan perjalananmu.</p>
-      <form id="login-form">
-        <input id="profile-name" type="text" placeholder="Nama pengguna" required />
-        <button type="submit">Mulai</button>
-      </form>
-      <div class="profile-list" id="profile-list"></div>
-    </div>
+<div id="game">
+  <div id="background"></div>
+  <div id="character"></div>
+  <div id="status"></div>
+
+  <div id="dialogue-box">
+    <div id="name"></div>
+    <div id="text"></div>
+    <div id="choices"></div>
   </div>
+</div>
 
-  <main id="game">
-    <div id="background"></div>
-    <div id="status"></div>
-    <section id="characters"></section>
+<script>
+/* ======================
+   RPG STATE (POINT 2)
+====================== */
+const state = {
+  hp: 100,
+  affection: 0,
+  flags: {}
+};
 
-    <section id="dialogue-box">
-      <div id="name"></div>
-      <div id="text"></div>
-      <div id="choices"></div>
-    </section>
-  </main>
+/* ======================
+   SCENE DATA (POINT 1 & 4)
+====================== */
+const scenes = {
+  room: {
+    background: 'linear-gradient(120deg, #cfd9ff, #ffffff)',
+    script: [
+      {
+        name: 'Mahiru',
+        text: 'Kamu akhirnya bangun. Aku sedikit khawatir.',
+        choices: [
+          { text: 'Aku baik-baik saja', next: 1, affection: +1 },
+          { text: 'Di mana ini?', next: 2 }
+        ]
+      },
+      {
+        name: 'Mahiru',
+        text: 'Syukurlah. Kamu selalu keras kepala seperti biasa.',
+        choices: [ { text: 'Lanjutkan', next: 3 } ]
+      },
+      {
+        name: 'Mahiru',
+        text: 'Ini kamarku. Dunia ini akan berubah tergantung pilihanmu.',
+        choices: [ { text: 'Lanjutkan', next: 3 } ]
+      },
+      {
+        name: 'Mahiru',
+        text: 'Mulai sekarang, ceritanya tidak akan memaafkan kesalahanmu.',
+        choices: []
+      }
+    ]
+  }
+};
 
-  <script type="module">
-    import { initEngine } from './core/engine.js';
+let currentScene = 'room';
+let index = 0;
 
-    window.addEventListener('DOMContentLoaded', () => {
-      initEngine();
-    });
-  </script>
+const bg = document.getElementById('background');
+const nameBox = document.getElementById('name');
+const textBox = document.getElementById('text');
+const choicesBox = document.getElementById('choices');
+const statusBox = document.getElementById('status');
+
+function updateStatus() {
+  statusBox.textContent = `HP: ${state.hp} | Affection: ${state.affection}`;
+}
+
+function render() {
+  const scene = scenes[currentScene];
+  const line = scene.script[index];
+
+  bg.style.background = scene.background;
+  nameBox.textContent = line.name;
+  textBox.textContent = line.text;
+  choicesBox.innerHTML = '';
+  updateStatus();
+
+  line.choices.forEach(c => {
+    const btn = document.createElement('div');
+    btn.className = 'choice';
+    btn.textContent = c.text;
+    btn.onclick = () => {
+      if (c.affection) state.affection += c.affection;
+      if (c.hp) state.hp += c.hp;
+      index = c.next;
+      render();
+    };
+    choicesBox.appendChild(btn);
+  });
+}
+
+render();
+</script>
 </body>
 </html>

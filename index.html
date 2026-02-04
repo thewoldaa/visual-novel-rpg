@@ -25,6 +25,46 @@
       <img id="character" alt="Karakter" />
     </div>
     <div id="status"></div>
+    <aside id="hud">
+      <div class="hud-section">
+        <div class="hud-title">Arah Cerita</div>
+        <div class="hud-label">Babak</div>
+        <div id="chapter" class="hud-value"></div>
+        <div class="hud-label">Suasana</div>
+        <div id="mood" class="hud-value"></div>
+        <div id="prompt" class="hud-prompt"></div>
+      </div>
+      <div class="hud-section">
+        <div class="hud-title">Relasi</div>
+        <div class="hud-metric">
+          <span>Afeksi</span>
+          <strong id="affection"></strong>
+        </div>
+        <div class="hud-metric">
+          <span>Kepercayaan</span>
+          <strong id="trust"></strong>
+        </div>
+        <div class="hud-metric">
+          <span>Kesepian</span>
+          <strong id="loneliness"></strong>
+        </div>
+      </div>
+      <div class="hud-section">
+        <div class="hud-title">Bekal</div>
+        <ul id="inventory-list" class="hud-list"></ul>
+      </div>
+      <div class="hud-section">
+        <div class="hud-title">Kenangan</div>
+        <ul id="memory-log" class="hud-list"></ul>
+      </div>
+      <div class="hud-section">
+        <div class="hud-title">Akhir Tersimpan</div>
+        <ul id="endings-list" class="hud-list"></ul>
+      </div>
+      <div class="hud-section hud-actions">
+        <button id="reset-run" type="button">Mulai Ulang</button>
+      </div>
+    </aside>
     <section id="characters"></section>
 
     <section id="dialogue-box">

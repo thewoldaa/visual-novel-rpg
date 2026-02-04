@@ -1,59 +1,440 @@
 const scenes = {
-  start: 'intro',
+  start: 'pintu_jeda',
   nodes: {
-    intro: {
-      id: 'intro',
-      background: 'linear-gradient(135deg, #f7d6ff, #dbeafe)',
+    pintu_jeda: {
+      id: 'pintu_jeda',
+      chapter: 'Babak 1 · Pintu Jeda',
+      mood: 'Embun lembut',
+      prompt: 'Tarik napas perlahan, rasakan lantai di bawahmu.',
+      background: 'linear-gradient(135deg, #fde2f3, #e0f2fe)',
       characters: [
         { name: 'Mahiru', pose: 'default', emotion: 'lembut' }
       ],
       dialogue: {
         speaker: 'Mahiru',
-        text: 'Kamu akhirnya bangun. Aku menunggu di sini sejak tadi.'
+        text: 'Kau terbangun di ruang yang memeluk waktu. Aku di sini, menjaga agar napasmu tidak goyah.'
       },
       choices: [
-        { text: 'Aku baik-baik saja.', next: 'tenang', effects: { affection: 1 } },
-        { text: 'Aku masih bingung.', next: 'bingung', effects: { trust: -1 } }
+        {
+          text: 'Pegang tanganku dulu.',
+          next: 'pegangan',
+          effects: {
+            affection: 2,
+            trust: 1,
+            memoryLog: ['Sentuhan pertama di ruang jeda terasa hangat.']
+          }
+        },
+        {
+          text: 'Aku ingin mengenali ruangan ini.',
+          next: 'amati',
+          effects: {
+            sanity: 1,
+            loneliness: 1,
+            memoryLog: ['Kamu memilih mengamati sebelum percaya.']
+          }
+        }
       ]
     },
-    tenang: {
-      id: 'tenang',
-      background: 'linear-gradient(135deg, #fce7f3, #ede9fe)',
+    pegangan: {
+      id: 'pegangan',
+      chapter: 'Babak 1 · Pintu Jeda',
+      mood: 'Hangat dan aman',
+      prompt: 'Pegangan kecil bisa menjadi jangkar keberanian.',
+      background: 'linear-gradient(135deg, #fef3c7, #fce7f3)',
       characters: [
         { name: 'Mahiru', pose: 'default', emotion: 'lega' }
       ],
       dialogue: {
         speaker: 'Mahiru',
-        text: 'Syukurlah. Suaramu membuat ruangan ini terasa lebih hangat.'
+        text: 'Baik. Tanganku akan mengingatkanmu bahwa kamu tidak sendirian di sini.'
       },
       choices: [
-        { text: 'Lanjutkan', next: 'akhir' }
+        {
+          text: 'Tanya tentang tempat ini.',
+          next: 'tanya_jeda',
+          effects: { trust: 1 }
+        },
+        {
+          text: 'Tetap diam, menikmati detik ini.',
+          next: 'diam',
+          effects: { affection: 1, loneliness: -1 }
+        }
       ]
     },
-    bingung: {
-      id: 'bingung',
+    amati: {
+      id: 'amati',
+      chapter: 'Babak 1 · Pintu Jeda',
+      mood: 'Penuh rasa ingin tahu',
+      prompt: 'Perhatikan bayangan halus di dinding, ia menyimpan petunjuk.',
       background: 'linear-gradient(135deg, #e0f2fe, #fef9c3)',
       characters: [
         { name: 'Mahiru', pose: 'default', emotion: 'waspada' }
       ],
       dialogue: {
         speaker: 'Mahiru',
-        text: 'Tidak apa-apa. Kita bisa mulai dari napas yang pelan dulu.'
+        text: 'Di sudut sana ada jam pasir yang tidak pernah habis. Ia mencatat siapa yang berani menyentuhnya.'
       },
       choices: [
-        { text: 'Lanjutkan', next: 'akhir' }
+        {
+          text: 'Sentuh jam pasir itu.',
+          next: 'jam_pasir',
+          effects: { sanity: -1, memoryLog: ['Kamu menyentuh jam pasir yang berbisik.'] }
+        },
+        {
+          text: 'Ikuti cahaya di lantai.',
+          next: 'cahaya',
+          effects: { trust: 1 }
+        }
       ]
     },
-    akhir: {
-      id: 'akhir',
-      background: 'linear-gradient(135deg, #fdf2f8, #e2e8f0)',
+    tanya_jeda: {
+      id: 'tanya_jeda',
+      chapter: 'Babak 1 · Pintu Jeda',
+      mood: 'Terbuka',
+      prompt: 'Pertanyaan yang lembut membuka pintu baru.',
+      background: 'linear-gradient(135deg, #fce7f3, #e0e7ff)',
       characters: [
-        { name: 'Mahiru', pose: 'default', emotion: 'hati-hati' }
+        { name: 'Mahiru', pose: 'default', emotion: 'tenang' }
       ],
       dialogue: {
         speaker: 'Mahiru',
-        text: 'Ini baru awal. Pilihanmu akan menentukan bagaimana kita bertahan.'
+        text: 'Ini Rumah Jeda. Tempat di mana kita bisa menyusun ulang pikiran sebelum melangkah ke dunia yang lebih keras.'
       },
+      choices: [
+        {
+          text: 'Ajariku latihan napas.',
+          next: 'napas',
+          effects: { mental: 2, memoryLog: ['Mahiru mengajarkan ritme napas yang pelan.'] }
+        },
+        {
+          text: 'Aku butuh jawaban yang jujur.',
+          next: 'jujur',
+          effects: { trust: 2 }
+        }
+      ]
+    },
+    diam: {
+      id: 'diam',
+      chapter: 'Babak 1 · Pintu Jeda',
+      mood: 'Hening lembut',
+      prompt: 'Diam juga bisa menjadi bahasa yang paling jujur.',
+      background: 'linear-gradient(135deg, #fdf2f8, #e2e8f0)',
+      characters: [
+        { name: 'Mahiru', pose: 'default', emotion: 'hangat' }
+      ],
+      dialogue: {
+        speaker: 'Mahiru',
+        text: 'Tidak apa-apa. Aku akan menunggu kata-katamu tumbuh sendiri.'
+      },
+      choices: [
+        {
+          text: 'Berikan senyum kecil.',
+          next: 'napas',
+          effects: { affection: 1 }
+        },
+        {
+          text: 'Jaga jarak dulu.',
+          next: 'jarak',
+          effects: { loneliness: 2 }
+        }
+      ]
+    },
+    jam_pasir: {
+      id: 'jam_pasir',
+      chapter: 'Babak 1 · Pintu Jeda',
+      mood: 'Misterius',
+      prompt: 'Setiap butir waktu menyimpan pilihanmu.',
+      background: 'linear-gradient(135deg, #c7d2fe, #fbcfe8)',
+      characters: [
+        { name: 'Mahiru', pose: 'default', emotion: 'penasaran' }
+      ],
+      dialogue: {
+        speaker: 'Mahiru',
+        text: 'Butirannya bergerak mundur. Hanya mereka yang berani menghadapi ingatan yang bisa melihatnya.'
+      },
+      choices: [
+        {
+          text: 'Putar jam pasir sekali.',
+          next: 'putar',
+          effects: { sanity: -2, inventory: ['Butiran Waktu'], memoryLog: ['Kamu memutar waktu, dan ruangan bergema lembut.'] }
+        },
+        {
+          text: 'Kembalikan ke tempatnya.',
+          next: 'cahaya',
+          effects: { sanity: 1 }
+        }
+      ]
+    },
+    cahaya: {
+      id: 'cahaya',
+      chapter: 'Babak 2 · Lorong Lembut',
+      mood: 'Bergerak pelan',
+      prompt: 'Cahaya memandu ke lorong yang lebih luas.',
+      background: 'linear-gradient(135deg, #dbeafe, #fef3c7)',
+      characters: [
+        { name: 'Mahiru', pose: 'default', emotion: 'waspada' }
+      ],
+      dialogue: {
+        speaker: 'Mahiru',
+        text: 'Ikuti langkahku. Lorong ini menuntun ke pilihan yang lebih besar.'
+      },
+      choices: [
+        {
+          text: 'Ikuti Mahiru.',
+          next: 'koridor',
+          effects: { trust: 1 }
+        },
+        {
+          text: 'Minta waktu sendiri.',
+          next: 'sendiri',
+          effects: { loneliness: 2, memoryLog: ['Kamu meminta ruang untuk bernapas sendiri.'] }
+        }
+      ]
+    },
+    jujur: {
+      id: 'jujur',
+      chapter: 'Babak 2 · Lorong Lembut',
+      mood: 'Terbuka',
+      prompt: 'Kejujuran membuat langkahmu terasa ringan.',
+      background: 'linear-gradient(135deg, #fef3c7, #ddd6fe)',
+      characters: [
+        { name: 'Mahiru', pose: 'default', emotion: 'serius' }
+      ],
+      dialogue: {
+        speaker: 'Mahiru',
+        text: 'Aku akan jujur. Aku takut kamu pergi sebelum kita menyelesaikan janji kita.'
+      },
+      choices: [
+        {
+          text: 'Aku janji untuk tetap di sini.',
+          next: 'koridor',
+          effects: { affection: 1, trust: 1, memoryLog: ['Kamu berjanji untuk tetap bertahan.'] }
+        },
+        {
+          text: 'Aku butuh ruang untuk menilai.',
+          next: 'jarak',
+          effects: { trust: -1, loneliness: 1 }
+        }
+      ]
+    },
+    napas: {
+      id: 'napas',
+      chapter: 'Babak 2 · Lorong Lembut',
+      mood: 'Menenangkan',
+      prompt: 'Hitung empat, tahan empat, lepaskan empat.',
+      background: 'linear-gradient(135deg, #fdf2f8, #bae6fd)',
+      characters: [
+        { name: 'Mahiru', pose: 'default', emotion: 'lembut' }
+      ],
+      dialogue: {
+        speaker: 'Mahiru',
+        text: 'Kita berdiri di ambang lorong. Dengan napas yang tenang, kamu bisa memilih arahmu.'
+      },
+      choices: [
+        {
+          text: 'Rasakan detak jantungmu.',
+          next: 'koridor',
+          effects: { mental: 2, memoryLog: ['Detakmu menjadi lebih teratur.'] }
+        },
+        {
+          text: 'Tuliskan kenangan ini.',
+          next: 'catatan',
+          effects: { inventory: ['Buku Saku Jeda'] }
+        }
+      ]
+    },
+    jarak: {
+      id: 'jarak',
+      chapter: 'Babak 2 · Lorong Lembut',
+      mood: 'Jeda yang dingin',
+      prompt: 'Jarak bisa melindungi, tapi juga membuatmu sepi.',
+      background: 'linear-gradient(135deg, #e2e8f0, #fbcfe8)',
+      characters: [
+        { name: 'Mahiru', pose: 'default', emotion: 'cemas' }
+      ],
+      dialogue: {
+        speaker: 'Mahiru',
+        text: 'Aku mengerti. Kalau kamu butuh ruang, aku akan menunggu di sini.'
+      },
+      choices: [
+        {
+          text: 'Minta maaf dan mendekat.',
+          next: 'koridor',
+          effects: { trust: 1, loneliness: -1 }
+        },
+        {
+          text: 'Tetap sendiri.',
+          next: 'ending_hening',
+          effects: { sanity: -2, loneliness: 3 }
+        }
+      ]
+    },
+    putar: {
+      id: 'putar',
+      chapter: 'Babak 2 · Lorong Lembut',
+      mood: 'Retak namun indah',
+      prompt: 'Waktu berputar dan membawa bayangan lama.',
+      background: 'linear-gradient(135deg, #d8b4fe, #fee2e2)',
+      characters: [
+        { name: 'Mahiru', pose: 'default', emotion: 'misterius' }
+      ],
+      dialogue: {
+        speaker: 'Mahiru',
+        text: 'Kau melihat kilasan masa lalu. Ada luka di sana, tapi juga cahaya yang menunggu.'
+      },
+      choices: [
+        {
+          text: 'Pegang kembali tangan Mahiru.',
+          next: 'koridor',
+          effects: { affection: 1, memoryLog: ['Kamu memilih kembali pada kehangatan.'] }
+        },
+        {
+          text: 'Tinggalkan jam pasir dan pergi.',
+          next: 'ending_retak',
+          effects: { sanity: -4 }
+        }
+      ]
+    },
+    sendiri: {
+      id: 'sendiri',
+      chapter: 'Babak 2 · Lorong Lembut',
+      mood: 'Sunyi',
+      prompt: 'Kesunyian punya pelukan yang berbeda.',
+      background: 'linear-gradient(135deg, #e2e8f0, #cbd5f5)',
+      characters: [
+        { name: 'Mahiru', pose: 'default', emotion: 'tenang' }
+      ],
+      dialogue: {
+        speaker: 'Mahiru',
+        text: 'Aku akan menunggumu di batas cahaya. Jangan terlalu lama, ya.'
+      },
+      choices: [
+        {
+          text: 'Kembali ke Mahiru.',
+          next: 'koridor',
+          effects: { trust: 1 }
+        },
+        {
+          text: 'Bertahan sendiri.',
+          next: 'ending_hening',
+          effects: { loneliness: 2 }
+        }
+      ]
+    },
+    catatan: {
+      id: 'catatan',
+      chapter: 'Babak 2 · Lorong Lembut',
+      mood: 'Reflektif',
+      prompt: 'Tulisan halus bisa menahan kenangan yang rapuh.',
+      background: 'linear-gradient(135deg, #fce7f3, #bfdbfe)',
+      characters: [
+        { name: 'Mahiru', pose: 'default', emotion: 'hangat' }
+      ],
+      dialogue: {
+        speaker: 'Mahiru',
+        text: 'Buku kecil itu akan menjadi rumah bagi kata-katamu. Jangan takut menuliskannya.'
+      },
+      choices: [
+        {
+          text: 'Bagikan catatan padanya.',
+          next: 'koridor',
+          effects: { trust: 2, memoryLog: ['Kamu membagikan catatan paling lembutmu.'] }
+        },
+        {
+          text: 'Simpan sendiri dulu.',
+          next: 'koridor',
+          effects: { affection: 1 }
+        }
+      ]
+    },
+    koridor: {
+      id: 'koridor',
+      chapter: 'Babak 3 · Lorong Pilihan',
+      mood: 'Menjelang keputusan',
+      prompt: 'Inilah titik di mana langkahmu menentukan warna akhir.',
+      background: 'linear-gradient(135deg, #c7d2fe, #fbcfe8)',
+      characters: [
+        { name: 'Mahiru', pose: 'default', emotion: 'tegas' }
+      ],
+      dialogue: {
+        speaker: 'Mahiru',
+        text: 'Lorong ini membuka dua pintu. Yang satu mengandalkan kepercayaan, yang lain keberanianmu sendiri.'
+      },
+      choices: [
+        {
+          text: 'Percaya pada arah Mahiru.',
+          next: 'ending_hangat',
+          effects: { trust: 2, affection: 1, memoryLog: ['Kamu memilih berjalan bersama Mahiru.'] }
+        },
+        {
+          text: 'Tentukan jalurmu sendiri.',
+          next: 'ending_tegar',
+          effects: { sanity: 2, loneliness: 1, memoryLog: ['Kamu memilih menulis akhir sendiri.'] }
+        }
+      ]
+    },
+    ending_hening: {
+      id: 'ending_hening',
+      chapter: 'Akhir · Hening',
+      mood: 'Sunyi yang dalam',
+      prompt: 'Kadang hening adalah tempat menyusun ulang diri.',
+      background: 'linear-gradient(135deg, #dbeafe, #e2e8f0)',
+      characters: [
+        { name: 'Mahiru', pose: 'default', emotion: 'sedih' }
+      ],
+      dialogue: {
+        speaker: 'Mahiru',
+        text: 'Kamu memilih hening. Aku akan menunggumu, meski hanya dalam ingatan.'
+      },
+      ending: 'hening',
+      choices: []
+    },
+    ending_retak: {
+      id: 'ending_retak',
+      chapter: 'Akhir · Retak Waktu',
+      mood: 'Getir namun jujur',
+      prompt: 'Setiap retak menyimpan pelajaran lembut.',
+      background: 'linear-gradient(135deg, #fecaca, #e9d5ff)',
+      characters: [
+        { name: 'Mahiru', pose: 'default', emotion: 'terkejut' }
+      ],
+      dialogue: {
+        speaker: 'Mahiru',
+        text: 'Kau memilih menjauh saat waktu bergetar. Aku harap kamu menemukan cahaya setelah ini.'
+      },
+      ending: 'retak-waktu',
+      choices: []
+    },
+    ending_hangat: {
+      id: 'ending_hangat',
+      chapter: 'Akhir · Hangat Bersama',
+      mood: 'Hangat dan damai',
+      prompt: 'Kepercayaanmu mengubah ruangan menjadi rumah.',
+      background: 'linear-gradient(135deg, #fde68a, #fbcfe8)',
+      characters: [
+        { name: 'Mahiru', pose: 'default', emotion: 'lega' }
+      ],
+      dialogue: {
+        speaker: 'Mahiru',
+        text: 'Terima kasih telah percaya. Kita akan menjaga jeda ini bersama, selangkah demi selangkah.'
+      },
+      ending: 'hangat-bersama',
+      choices: []
+    },
+    ending_tegar: {
+      id: 'ending_tegar',
+      chapter: 'Akhir · Tegar Sendiri',
+      mood: 'Mandiri',
+      prompt: 'Kamu memilih menulis akhir dengan tanganmu sendiri.',
+      background: 'linear-gradient(135deg, #bfdbfe, #e9d5ff)',
+      characters: [
+        { name: 'Mahiru', pose: 'default', emotion: 'bangga' }
+      ],
+      dialogue: {
+        speaker: 'Mahiru',
+        text: 'Langkahmu tegar. Aku tidak menahanmu, karena aku tahu kamu akan baik-baik saja.'
+      },
+      ending: 'tegar',
       choices: []
     }
   }

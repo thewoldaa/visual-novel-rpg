@@ -17,4 +17,10 @@ Engine visual novel berbasis web yang berjalan sepenuhnya di sisi klien (tanpa b
 2. Pilih **Deploy from a branch**, lalu pilih branch dan root (`/`).
 3. Simpan konfigurasi. GitHub Pages akan meng-host `index.html`.
 
+## Struktur asset gambar
+Simpan file gambar ke path berikut agar scene dapat dirender tanpa error:
+
+- `assets/bg/room.jpg` (background)
+- `assets/char/mahiru.png` (sprite karakter)
+
 Loader scene menggunakan URL berbasis modul sehingga aman untuk subpath GitHub Pages dan tetap memiliki fallback embedded scenes bila `data/scenes.json` gagal dimuat.

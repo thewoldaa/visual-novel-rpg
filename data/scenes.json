@@ -3,57 +3,24 @@
   "nodes": {
     "intro": {
       "id": "intro",
-      "background": "linear-gradient(135deg, #f7d6ff, #dbeafe)",
-      "characters": [
-        { "name": "Mahiru", "pose": "default", "emotion": "lembut" }
-      ],
-      "dialogue": {
-        "speaker": "Mahiru",
-        "text": "Kamu akhirnya bangun. Aku menunggu di sini sejak tadi."
-      },
-      "choices": [
-        { "text": "Aku baik-baik saja.", "next": "tenang", "effects": { "affection": 1 } },
-        { "text": "Aku masih bingung.", "next": "bingung", "effects": { "trust": -1 } }
-      ]
-    },
-    "tenang": {
-      "id": "tenang",
-      "background": "linear-gradient(135deg, #fce7f3, #ede9fe)",
-      "characters": [
-        { "name": "Mahiru", "pose": "default", "emotion": "lega" }
-      ],
-      "dialogue": {
-        "speaker": "Mahiru",
-        "text": "Syukurlah. Suaramu membuat ruangan ini terasa lebih hangat."
-      },
-      "choices": [
-        { "text": "Lanjutkan", "next": "akhir" }
-      ]
-    },
-    "bingung": {
-      "id": "bingung",
-      "background": "linear-gradient(135deg, #e0f2fe, #fef9c3)",
-      "characters": [
-        { "name": "Mahiru", "pose": "default", "emotion": "waspada" }
-      ],
-      "dialogue": {
-        "speaker": "Mahiru",
-        "text": "Tidak apa-apa. Kita bisa mulai dari napas yang pelan dulu."
-      },
-      "choices": [
-        { "text": "Lanjutkan", "next": "akhir" }
-      ]
-    },
-    "akhir": {
-      "id": "akhir",
-      "background": "linear-gradient(135deg, #fdf2f8, #e2e8f0)",
-      "characters": [
-        { "name": "Mahiru", "pose": "default", "emotion": "hati-hati" }
-      ],
       "dialogue": {
         "speaker": "Mahiru",
         "text": "Ini baru awal. Pilihanmu akan menentukan bagaimana kita bertahan."
       },
+      "background": "assets/bg/room.jpg",
+      "character": "assets/char/mahiru.png",
+      "choices": [
+        { "text": "Lanjut", "next": "chapter1" }
+      ]
+    },
+    "chapter1": {
+      "id": "chapter1",
+      "dialogue": {
+        "speaker": "Mahiru",
+        "text": "Kamu masih di sini. Aku kira kamu sudah pergi."
+      },
+      "background": "assets/bg/room.jpg",
+      "character": "assets/char/mahiru.png",
       "choices": []
     }
   }

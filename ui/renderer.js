@@ -6,7 +6,9 @@ const elements = {};
 const ensureElements = () => {
   if (elements.ready) return;
   elements.game = document.getElementById('game');
-  elements.background = document.getElementById('background');
+  elements.scene = document.getElementById('scene');
+  elements.background = document.getElementById('bg');
+  elements.character = document.getElementById('character');
   elements.characters = document.getElementById('characters');
   elements.nameBox = document.getElementById('name');
   elements.textBox = document.getElementById('text');
@@ -15,11 +17,33 @@ const ensureElements = () => {
   elements.ready = true;
 };
 
+const looksLikeGradient = (value) => typeof value === 'string' && value.includes('gradient');
+
 export const renderScene = (node, onChoice) => {
   ensureElements();
   if (!node) return;
 
-  applySceneTransition(elements.background, node.background);
+  if (looksLikeGradient(node.background)) {
+    if (elements.background) {
+      elements.background.removeAttribute('src');
+    }
+    applySceneTransition(elements.scene, node.background);
+  } else if (node.background) {
+    applySceneTransition(elements.scene, null);
+    if (elements.background) {
+      elements.background.src = node.background;
+    }
+  }
+
+  if (elements.character) {
+    if (node.character) {
+      elements.character.src = node.character;
+      elements.character.style.display = 'block';
+    } else {
+      elements.character.removeAttribute('src');
+      elements.character.style.display = 'none';
+    }
+  }
 
   elements.characters.innerHTML = '';
   node.characters?.forEach((character) => {
